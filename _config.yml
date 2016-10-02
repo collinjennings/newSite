@@ -3,8 +3,8 @@ title:       Collin Jennings
 email:       collin.jennings@gmail.com
 author:      Collin Jennings
 description: ""
-baseurl:     ""
-url:         "" #"http://collinjennings.com"
+baseurl:     "" #collinjennings.com"
+url:         "http://collinjennings.com"
 date_format: "%b %-d, %Y"
 
 #url: "localhost:4000" # the base hostname & protocol for your site
