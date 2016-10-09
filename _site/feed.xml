@@ -3,8 +3,84 @@
   <channel>
     <title>Collin Jennings</title>
     <description></description>
-    <link>/</link>
-    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://collinjennings.com/</link>
+    <atom:link href="http://collinjennings.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Privacy Performed at Scale</title>
+        <description>&lt;p&gt;&lt;em&gt;With significant planning assistance from Gretta Tritch Roman and potluck contributions from Maria Cecire, Adhaar Desai, Miriam Felton-Dansky, and Natalie Desrosiers.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You wear a Fitbit during your jog in the morning, swipe your grocery loyalty card when you checkout in the evening, and share your contacts when you play Candy Crush at night. This “Internet of Things” offers automation, customization, and convenience and, in turn, demands access. The daily choices to allow access or not repeatedly require you to produce the contours of your private life, to open certain spaces and keep others closed. In this collaborative potluck, we asked: how do those contours take shape? (If your first question, is what the heck is a critical potluck? Check our handy &lt;a href=&quot;/criticalPotluck.html&quot;&gt;guide&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;p&gt;We began with an object of inquiry: Part 4 of the &lt;a href=&quot;http://www.pewinternet.org/datasets/jan-27-feb-16-2015-privacy-panel-4/&quot;&gt;Pew Research Center’s Internet Survey&lt;/a&gt;. It was conducted on 461 participants between Jan. 27 and Feb. 16, 2015. The survey offers a snapshot of how people face the ever-growing number of technologies and products that make claims upon various types of private information (from your Google search history to your average driving speed). Pew released the survey data with &lt;a href=&quot;http://www.pewinternet.org/2016/01/14/privacy-and-information-sharing/&quot;&gt;summary analysis&lt;/a&gt; that provides a glimpse of the general sentiments of respondents. (Hover over the pie charts to see the corresponding questions.)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/retLoyPie.png&quot; alt=&quot;retail&quot; title=&quot;A grocery store has offered you a free loyalty card that will save you money on your purchases. In exchange the store will keep track of your shopping habits and sell this data to third parties. Would this scenario be acceptable to you, or not? &quot; /&gt;&lt;img src=&quot;/assets/smartThermoPie2.png&quot; alt=&quot;thermo&quot; title=&quot;A new technology company has created an inexpensive thermostat sensor for your house that would learn about your temperature zone and movements around the house and potentially save you on your energy bill. It is programmable remotely in return for sharing data about some of the basic activities that take place in your house like when people are there and when they move from room to room. Would this be acceptable or not?&quot; /&gt;&lt;img src=&quot;/assets/surCamPie.png&quot; alt=&quot;surveil&quot; title=&quot;Several co-workers of yours have recently had personal belongings stolen from your workplace, and the company is planning to instal high-resolution security cameras that use facial recognition technology to help identify the thieves and make the workplace more secure. The footage would stay on file as long as the company wishes to retain it, and could be used to track various measures of employee attendance and performance. Would this be acceptable to you or not? &quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The aggregated responses illustrate that, for instance, most people are more wary of potential encroachments to their homes than their workplaces. The critical potluck, however, was intended to interrogate more subtle patterns that might be observed in how respondents conceived of that fuzzy line between acceptable and creepy. The task was to pose a question to the survey data designed to generate results that reveal points of tension in how survey respondents constitute their private lives.  Consider the great number of scholars who have examined the boundary between public and private—Michel Foucault, Jurgen Habermas, Nancy Fraser, Michael Warner, and so on. Many of these writers have discussed the relationship between public and private in terms of sites, spaces, or spheres. In &lt;em&gt;The Human Condition&lt;/em&gt; (1958), Hannah Arendt contended, “the four walls of one’s private property offer the only reliable hiding place from the common public world, not only from everything that goes on in it but also from its very publicity, from being seen and being heard.”&lt;a href=&quot;#fn0&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt;&lt;a href=&quot;#fn0&quot;&gt;&lt;/a&gt; Private spaces are homes, glove boxes, and safe deposit boxes. What happens to the language and concepts of privacy when it is represented in 1s and 0s and distributed across databases and server farms?&lt;/p&gt;
+
+&lt;p&gt;The potluck discussion began with this familiar idea of a private space: Is it strange that a smart thermostat is so much more worrisome than workplace cameras that use facial recognition algorithms? But as we worked through more of the responses, participants became more interested in a peculiar incongruence in the  charged, aggressive manner that respondents discussed such fuzzy, abstract ideas, like their data, information, and even stuff.&lt;/p&gt;
+
+&lt;p&gt;Rather than just look a specific lexical patterns, though, we wanted to track what kinds of words and constructions were used to describe emergent notions of privacy. We ended up turning to &lt;a href=&quot;http://www.cmu.edu/dietrich/english/research/docuscope.html&quot;&gt;Docuscope&lt;/a&gt;, a dictionary of over a hundred abstract categories (what the designers call Language Action Types, or LATs) that can classify over 40 million linguistic patterns according to their rhetorical usage. Docuscope was designed by Carnegie Mellon rhetoricians, David Kauffer and Suguru Ishizaki, and they describe it as a tool for, “corpus-based rhetorical analysis.” We uploaded the survey responses to the web-based tool, &lt;a href=&quot;http://vep.cs.wisc.edu/ubiq/&quot;&gt;Ubiqu+Ity&lt;/a&gt;, which tags the text according to the Docuscope categories. Here’s how one tagged response looks:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/docu_tag.png&quot; alt=&quot;tag&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The interface of tagged responses provided more precise vocabulary for describing the relationship between exclamatory adjectives and vague nouns that seemed to recur in the survey answers. &lt;strong&gt;Abstract concepts&lt;/strong&gt; is the most frequent LAT in the data, and &lt;strong&gt;Reporting States&lt;/strong&gt;, &lt;strong&gt;Negativity&lt;/strong&gt;, and &lt;strong&gt;Deny and Disclaim&lt;/strong&gt; are also very prevalent. In this example contingent verb constructions shape how the respondent relates to abstract ideas of “information” and “basic activities.”  The respondent considers the different variables at play that would determine whether being monitored via video at work would be acceptable or not.&lt;/p&gt;
+
+&lt;p&gt;When the scale of analysis is shifted from individual responses to the LATs in the larger corpus, it appears that the &lt;strong&gt;Contingency&lt;/strong&gt; category best explains the variation among the answers. The graph below is a plot of all 1085 text-box responses to the survey. The points are positioned according the frequencies of every LAT categories in each response. This means that each data point initially has over a hundred dimensions in which it could be plotted, but, of course, there’s no way to present this virtual space and make sense of it. Instead, I’ve reduced the space to two dimensions using the statistical technique of Principal Component Analysis, which produce two new composite axes (made up of a combination of the original 100+ axes) that represent the greatest spread of the data, the most variation in values along one axis and then the axis that is orthogonal to the first axis. These are the principal components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/privacySurvey_pca2.png&quot; alt=&quot;PCA1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By examining the LAT categories that have the greatest ‘pull’ on the data, we can observe that, along the x-axis, the presence of &lt;strong&gt;Contingency&lt;/strong&gt; language category seems to explain that most difference between responses. Points positioned to the left of the zero on the x-axis refer to answers that have virtually no words or phrases tagged as &lt;strong&gt;Contingency&lt;/strong&gt;, while most of the points to the right, especially in the blue cluster have a relatively high frequency of contingency-tagged terms. Below are representative responses for different areas of the graph, and you can look at the other LAT categories that contribute to the variation between responses here. For the rest of this brief analysis, though, I want to consider how contingency operates in the survey answers. This result raises a new question: &lt;strong&gt;What’s at stake in contingently conceiving the contours of one’s private life?&lt;/strong&gt; The responses on the right side of the graph indicate participants imaginatively delimiting what ought to be private.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/pca-quote.png&quot; alt=&quot;PCA2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;Contingency&lt;/strong&gt; tag often refers to responses written in the subjunctive mood, which, as the Oxford English Dictionary reminds us is a grammatical form used to “denote an action or a state as conceived (and not as a fact) and therefore used to express a wish, command, exhortation, or a contingent, hypothetical, or prospective event.” (I like this definition because it acknowledges the use of the subjunctive for both prospective situations and command, which gestures to the angry frustration exhibited in many of these responses.) Psychologist Jerome Bruner observed, “To be in the subjunctive mode is to be trafficking in human possibilities rather than in settled certainties.”&lt;a href=&quot;#fn2&quot;&gt;&lt;sup&gt;3&lt;/sup&gt;&lt;/a&gt;&lt;a href=&quot;#fn2&quot;&gt;&lt;/a&gt; &lt;strong&gt;Contingency&lt;/strong&gt; in the responses tends to correlate with &lt;strong&gt;Abstract Concepts&lt;/strong&gt; and &lt;strong&gt;Reporting Events&lt;/strong&gt;, creating a profile that is similar to the tagged example included above. Here are other representative answers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“I feel like this information would be used against me if I got into an accident. For example, the insurance agency will look at the data and say that I was speeding right before the accident and claim that the accident was my fault. I also feel as though law enforcement would attempt to use this information in the event of a criminal case.”&lt;/li&gt;
+  &lt;li&gt;“If they just tracked employee attendance and performance for statistical purposes I would be fine with it. But if they used that footage to punish employees that show up late/goof off then I would not be okay with it.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Part of what is interesting about using the presence of contingent language for separating responses is the fact that taking a suppositional stance turns out not to be very popular perspective, despite the fact that almost all of the questions are phrased in the subjunctive mood. Sixty-eight percent of the respondents did not use any contingent language according to the Docuscope tagger. In the survey, the more common stance is a flat out denial of any demands upon one’s privacy (though this seems unlikely to be as common in real-world decisions). Contingent answers, by contrast, exhibit a willingness to play along. The Pew Research Center administered this survey digitally, with participants recording their answers at computer terminals. Indeed, responses even begin to suspect the survey itself as an encroachment at times.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“I do not want to give any answer to this.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This arrangement is fitting since the method of the survey conveniently echoes the typical media interface in which commercial demands are made upon privacy – the screen. Media historian Lisa Gitelman links the plane of the screen to what Walter Benjamin calls the ‘dictatorial perpendicular’ of modern reading.&lt;a href=&quot;#fn1&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt;&lt;a href=&quot;#fn1&quot;&gt;&lt;/a&gt; Locating the screen in its natural post-capitalist habitat, Gitelman explains that “the office walls contain cubicles, the cubicles contain screens, the screens contain windows, and the windows contain page images. These vertical surfaces nest within each other, interfacing like a sequence of Russian dolls, waiting to funnel attention toward documents as if their very perpendicular sequence could ward off distraction” (130).&lt;/p&gt;
+
+&lt;p&gt;Even outside of the workplace, screens prescribe conditions of attention and use that proliferate the number and kinds of spaces in which private content might reside. Contingent responses to the Pew Survey index users grappling with the circumstances of new and vulnerable private spaces.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;One response to a question regarding access to one’s phone camera and location:&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Because it is not a good idea. By giving anyone access to our camera and your location would mean they could activate your camera anytime without your permission. This means they could spy on you any time they wanted to without your knowledge. To me, this would be a huge invasion of privacy.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In the emergent environment of digital media, privacy cannot properly be delimited to a physical space (although the vehement rejections of any type of home monitoring in the survey responses indicate that this circumstance has not been accepted calmly). Being connected creates a paradoxical condition for privacy. As media theorist Wendy Chun suggests, “Internet users are curiously inside out — they are framed as private subjects exposed in public.”&lt;a href=&quot;#fn3&quot;&gt;&lt;sup&gt;4&lt;/sup&gt;&lt;/a&gt;&lt;a href=&quot;#fn3&quot;&gt;&lt;/a&gt; Digital media is governed by a “logic of containment, which is always imagined as already transgressed” (13). The word &lt;em&gt;imagined&lt;/em&gt; is key here. Private material, data, information is distributed, networked, and re-sold to the point that we can really only imagine the borders of our private lives. The concept of privacy might then be more accurately located in the context of performance, play, heuristic, or supposition, rather than in Arendt’s four walls. It is fluid and demands to be continually re-defined, re-constituted, and re-imagined.&lt;/p&gt;
+
+&lt;h2 id=&quot;references&quot;&gt;References&lt;/h2&gt;
+
+&lt;p&gt;&lt;a id=&quot;fn0&quot;&gt;&lt;/a&gt; 
+   1. Hannah Arendt, &lt;em&gt;The Human Condition&lt;/em&gt;, 2nd ed. (Chicago: University of Chicago, 1958), 71.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;fn1&quot;&gt;&lt;/a&gt; 
+    2. Lisa Gitelman, &lt;em&gt;Paper Knowledge: Toward a Media History of Documents&lt;/em&gt;, (Durham, NC: Duke University Press, 2014), 129.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;fn2&quot;&gt;&lt;/a&gt; 
+    3. Jeremy Bruner, &lt;em&gt;Actual Minds, Possible Worlds&lt;/em&gt;, (Cambridge: Harvard University Press, 1987), 26.&lt;/p&gt;
+
+&lt;p&gt;&lt;a id=&quot;fn3&quot;&gt;&lt;/a&gt; 
+    4. Wendy Hui Kyong Chun, &lt;em&gt;Updating to Remain the Same: Habitual New Media&lt;/em&gt;, (Cambridge, MA: MIT Press, 2016), 12.&lt;/p&gt;
+
+&lt;table style=&quot;border-style: hidden; border-collapse: collapse;&quot;&gt;
+
+&lt;/table&gt;
+</description>
+        <pubDate>Tue, 04 Oct 2016 10:27:24 -0400</pubDate>
+        <link>http://collinjennings.com/2016/10/04/privacy-performed/</link>
+        <guid isPermaLink="true">http://collinjennings.com/2016/10/04/privacy-performed/</guid>
+      </item>
     
       <item>
         <title>The Language of Notation and Imaginative Writing</title>
@@ -182,146 +258,8 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 &lt;/table&gt;
 </description>
         <pubDate>Fri, 22 Jul 2016 10:27:24 -0400</pubDate>
-        <link>/2016/07/22/language-notation/</link>
-        <guid isPermaLink="true">/2016/07/22/language-notation/</guid>
-      </item>
-    
-      <item>
-        <title>Pixyll in Action</title>
-        <description>&lt;p&gt;There is a significant amount of subtle, yet precisely calibrated, styling to ensure
-that your content is emphasized while still looking aesthetically pleasing.&lt;/p&gt;
-
-&lt;p&gt;All links are easy to &lt;a href=&quot;#&quot;&gt;locate and discern&lt;/a&gt;, yet don’t detract from the &lt;a href=&quot;#&quot;&gt;harmony
-of a paragraph&lt;/a&gt;. The &lt;em&gt;same&lt;/em&gt; goes for italics and &lt;strong&gt;bold&lt;/strong&gt; elements. Even the the strikeout
-works if &lt;del&gt;for some reason you need to update your post&lt;/del&gt;. For consistency’s sake,
-&lt;ins&gt;The same goes for insertions&lt;/ins&gt;, of course.&lt;/p&gt;
-
-&lt;h3 id=&quot;code-with-syntax-highlighting&quot;&gt;Code, with syntax highlighting&lt;/h3&gt;
-
-&lt;p&gt;Here’s an example of some ruby code with line anchors.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# The most awesome of classes&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Awesome&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ActiveRecord&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Base&lt;/span&gt;
-  &lt;span class=&quot;kp&quot;&gt;include&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;EvenMoreAwesome&lt;/span&gt;
-
-  &lt;span class=&quot;n&quot;&gt;validates_presence_of&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:something&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;validates&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;:email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;email_format: &lt;/span&gt;&lt;span class=&quot;kp&quot;&gt;true&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;initialize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kp&quot;&gt;nil&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;favorite_number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;12&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'created awesomeness'&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;email_format&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;email&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=~&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;/\S+@\S+\.\S+/&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some CSS:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.foobar&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;c&quot;&gt;/* Named colors rule */&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;tomato&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some JavaScript:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;isPresent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'is-present'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;doStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;isPresent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;doOtherStuff&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;things&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Here’s some HTML:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;m0 p0 bg-blue white&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nt&quot;&gt;&amp;lt;h3&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;h1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Hello, world!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h3&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;h1 id=&quot;headings&quot;&gt;Headings!&lt;/h1&gt;
-
-&lt;p&gt;They’re responsive, and well-proportioned (in &lt;code class=&quot;highlighter-rouge&quot;&gt;padding&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;line-height&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;margin&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;font-size&lt;/code&gt;).
-They also heavily rely on the awesome utility, &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h5 id=&quot;they-draw-the-perfect-amount-of-attention&quot;&gt;They draw the perfect amount of attention&lt;/h5&gt;
-
-&lt;p&gt;This allows your content to have the proper informational and contextual hierarchy. Yay.&lt;/p&gt;
-
-&lt;h3 id=&quot;there-are-lists-too&quot;&gt;There are lists, too&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Apples&lt;/li&gt;
-  &lt;li&gt;Oranges&lt;/li&gt;
-  &lt;li&gt;Potatoes&lt;/li&gt;
-  &lt;li&gt;Milk&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Mow the lawn&lt;/li&gt;
-  &lt;li&gt;Feed the dog&lt;/li&gt;
-  &lt;li&gt;Dance&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;images-look-great-too&quot;&gt;Images look great, too&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png&quot; alt=&quot;desk&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png&quot; alt=&quot;desk&quot; /&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;there-are-also-pretty-colors&quot;&gt;There are also pretty colors&lt;/h3&gt;
-
-&lt;p&gt;Also the result of &lt;a href=&quot;http://www.basscss.com/&quot;&gt;BASSCSS&lt;/a&gt;, you can &lt;span class=&quot;bg-dark-gray white&quot;&gt;highlight&lt;/span&gt; certain components
-of a &lt;span class=&quot;red&quot;&gt;post&lt;/span&gt; &lt;span class=&quot;mid-gray&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;green&quot;&gt;CSS&lt;/span&gt; &lt;span class=&quot;orange&quot;&gt;classes&lt;/span&gt;.&lt;/p&gt;
-
-&lt;p&gt;I don’t recommend using blue, though. It looks like a &lt;span class=&quot;blue&quot;&gt;link&lt;/span&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;footnotes&quot;&gt;Footnotes!&lt;/h3&gt;
-
-&lt;p&gt;Markdown footnotes are supported, and they look great! Simply put e.g. &lt;code class=&quot;highlighter-rouge&quot;&gt;[^1]&lt;/code&gt; where you want the footnote to appear,&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; and then add
-the reference at the end of your markdown.&lt;/p&gt;
-
-&lt;h3 id=&quot;stylish-blockquotes-included&quot;&gt;Stylish blockquotes included&lt;/h3&gt;
-
-&lt;p&gt;You can use the markdown quote syntax, &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; for simple quotes.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;However, you need to inject html if you’d like a citation footer. I will be working on a way to
-hopefully sidestep this inconvenience.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  &lt;/p&gt;
-  &lt;footer&gt;&lt;cite title=&quot;Antoine de Saint-Exupéry&quot;&gt;Antoine de Saint-Exupéry&lt;/cite&gt;&lt;/footer&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&quot;theres-more-being-added-all-the-time&quot;&gt;There’s more being added all the time&lt;/h3&gt;
-
-&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/johnotander/pixyll&quot;&gt;Github repository&lt;/a&gt; to request,
-or add, features.&lt;/p&gt;
-
-&lt;p&gt;Happy writing.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;Important information that may distract from the main text can go in footnotes. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Tue, 10 Jun 2014 08:31:19 -0400</pubDate>
-        <link>/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</link>
-        <guid isPermaLink="true">/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</guid>
+        <link>http://collinjennings.com/2016/07/22/language-notation/</link>
+        <guid isPermaLink="true">http://collinjennings.com/2016/07/22/language-notation/</guid>
       </item>
     
   </channel>

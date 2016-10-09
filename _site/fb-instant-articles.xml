@@ -2,15 +2,101 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link></link>
+    <link>http://collinjennings.com</link>
     <description>
       
     </description>
     
         
             <item>
+                <title>Privacy Performed at Scale</title>
+                <link>http://collinjennings.com/2016/10/04/privacy-performed/</link>
+                <content:encoded>
+                    <![CDATA[
+                    <p><em>With significant planning assistance from Gretta Tritch Roman and potluck contributions from Maria Cecire, Adhaar Desai, Miriam Felton-Dansky, and Natalie Desrosiers.</em></p>
+
+<p>You wear a Fitbit during your jog in the morning, swipe your grocery loyalty card when you checkout in the evening, and share your contacts when you play Candy Crush at night. This “Internet of Things” offers automation, customization, and convenience and, in turn, demands access. The daily choices to allow access or not repeatedly require you to produce the contours of your private life, to open certain spaces and keep others closed. In this collaborative potluck, we asked: how do those contours take shape? (If your first question, is what the heck is a critical potluck? Check our handy <a href="/criticalPotluck.html">guide</a>.)</p>
+
+<p>We began with an object of inquiry: Part 4 of the <a href="http://www.pewinternet.org/datasets/jan-27-feb-16-2015-privacy-panel-4/">Pew Research Center’s Internet Survey</a>. It was conducted on 461 participants between Jan. 27 and Feb. 16, 2015. The survey offers a snapshot of how people face the ever-growing number of technologies and products that make claims upon various types of private information (from your Google search history to your average driving speed). Pew released the survey data with <a href="http://www.pewinternet.org/2016/01/14/privacy-and-information-sharing/">summary analysis</a> that provides a glimpse of the general sentiments of respondents. (Hover over the pie charts to see the corresponding questions.)</p>
+
+<p><img src="/assets/retLoyPie.png" alt="retail" title="A grocery store has offered you a free loyalty card that will save you money on your purchases. In exchange the store will keep track of your shopping habits and sell this data to third parties. Would this scenario be acceptable to you, or not? " /><img src="/assets/smartThermoPie2.png" alt="thermo" title="A new technology company has created an inexpensive thermostat sensor for your house that would learn about your temperature zone and movements around the house and potentially save you on your energy bill. It is programmable remotely in return for sharing data about some of the basic activities that take place in your house like when people are there and when they move from room to room. Would this be acceptable or not?" /><img src="/assets/surCamPie.png" alt="surveil" title="Several co-workers of yours have recently had personal belongings stolen from your workplace, and the company is planning to instal high-resolution security cameras that use facial recognition technology to help identify the thieves and make the workplace more secure. The footage would stay on file as long as the company wishes to retain it, and could be used to track various measures of employee attendance and performance. Would this be acceptable to you or not? " /></p>
+
+<p>The aggregated responses illustrate that, for instance, most people are more wary of potential encroachments to their homes than their workplaces. The critical potluck, however, was intended to interrogate more subtle patterns that might be observed in how respondents conceived of that fuzzy line between acceptable and creepy. The task was to pose a question to the survey data designed to generate results that reveal points of tension in how survey respondents constitute their private lives.  Consider the great number of scholars who have examined the boundary between public and private—Michel Foucault, Jurgen Habermas, Nancy Fraser, Michael Warner, and so on. Many of these writers have discussed the relationship between public and private in terms of sites, spaces, or spheres. In <em>The Human Condition</em> (1958), Hannah Arendt contended, “the four walls of one’s private property offer the only reliable hiding place from the common public world, not only from everything that goes on in it but also from its very publicity, from being seen and being heard.”<a href="#fn0"><sup>1</sup></a><a href="#fn0"></a> Private spaces are homes, glove boxes, and safe deposit boxes. What happens to the language and concepts of privacy when it is represented in 1s and 0s and distributed across databases and server farms?</p>
+
+<p>The potluck discussion began with this familiar idea of a private space: Is it strange that a smart thermostat is so much more worrisome than workplace cameras that use facial recognition algorithms? But as we worked through more of the responses, participants became more interested in a peculiar incongruence in the  charged, aggressive manner that respondents discussed such fuzzy, abstract ideas, like their data, information, and even stuff.</p>
+
+<p>Rather than just look a specific lexical patterns, though, we wanted to track what kinds of words and constructions were used to describe emergent notions of privacy. We ended up turning to <a href="http://www.cmu.edu/dietrich/english/research/docuscope.html">Docuscope</a>, a dictionary of over a hundred abstract categories (what the designers call Language Action Types, or LATs) that can classify over 40 million linguistic patterns according to their rhetorical usage. Docuscope was designed by Carnegie Mellon rhetoricians, David Kauffer and Suguru Ishizaki, and they describe it as a tool for, “corpus-based rhetorical analysis.” We uploaded the survey responses to the web-based tool, <a href="http://vep.cs.wisc.edu/ubiq/">Ubiqu+Ity</a>, which tags the text according to the Docuscope categories. Here’s how one tagged response looks:</p>
+
+<p><img src="/assets/docu_tag.png" alt="tag" /></p>
+
+<p>The interface of tagged responses provided more precise vocabulary for describing the relationship between exclamatory adjectives and vague nouns that seemed to recur in the survey answers. <strong>Abstract concepts</strong> is the most frequent LAT in the data, and <strong>Reporting States</strong>, <strong>Negativity</strong>, and <strong>Deny and Disclaim</strong> are also very prevalent. In this example contingent verb constructions shape how the respondent relates to abstract ideas of “information” and “basic activities.”  The respondent considers the different variables at play that would determine whether being monitored via video at work would be acceptable or not.</p>
+
+<p>When the scale of analysis is shifted from individual responses to the LATs in the larger corpus, it appears that the <strong>Contingency</strong> category best explains the variation among the answers. The graph below is a plot of all 1085 text-box responses to the survey. The points are positioned according the frequencies of every LAT categories in each response. This means that each data point initially has over a hundred dimensions in which it could be plotted, but, of course, there’s no way to present this virtual space and make sense of it. Instead, I’ve reduced the space to two dimensions using the statistical technique of Principal Component Analysis, which produce two new composite axes (made up of a combination of the original 100+ axes) that represent the greatest spread of the data, the most variation in values along one axis and then the axis that is orthogonal to the first axis. These are the principal components.</p>
+
+<p><img src="/assets/privacySurvey_pca2.png" alt="PCA1" /></p>
+
+<p>By examining the LAT categories that have the greatest ‘pull’ on the data, we can observe that, along the x-axis, the presence of <strong>Contingency</strong> language category seems to explain that most difference between responses. Points positioned to the left of the zero on the x-axis refer to answers that have virtually no words or phrases tagged as <strong>Contingency</strong>, while most of the points to the right, especially in the blue cluster have a relatively high frequency of contingency-tagged terms. Below are representative responses for different areas of the graph, and you can look at the other LAT categories that contribute to the variation between responses here. For the rest of this brief analysis, though, I want to consider how contingency operates in the survey answers. This result raises a new question: <strong>What’s at stake in contingently conceiving the contours of one’s private life?</strong> The responses on the right side of the graph indicate participants imaginatively delimiting what ought to be private.</p>
+
+<p><img src="/assets/pca-quote.png" alt="PCA2" /></p>
+
+<p>The <strong>Contingency</strong> tag often refers to responses written in the subjunctive mood, which, as the Oxford English Dictionary reminds us is a grammatical form used to “denote an action or a state as conceived (and not as a fact) and therefore used to express a wish, command, exhortation, or a contingent, hypothetical, or prospective event.” (I like this definition because it acknowledges the use of the subjunctive for both prospective situations and command, which gestures to the angry frustration exhibited in many of these responses.) Psychologist Jerome Bruner observed, “To be in the subjunctive mode is to be trafficking in human possibilities rather than in settled certainties.”<a href="#fn2"><sup>3</sup></a><a href="#fn2"></a> <strong>Contingency</strong> in the responses tends to correlate with <strong>Abstract Concepts</strong> and <strong>Reporting Events</strong>, creating a profile that is similar to the tagged example included above. Here are other representative answers:</p>
+
+<ul>
+  <li>“I feel like this information would be used against me if I got into an accident. For example, the insurance agency will look at the data and say that I was speeding right before the accident and claim that the accident was my fault. I also feel as though law enforcement would attempt to use this information in the event of a criminal case.”</li>
+  <li>“If they just tracked employee attendance and performance for statistical purposes I would be fine with it. But if they used that footage to punish employees that show up late/goof off then I would not be okay with it.”</li>
+</ul>
+
+<p>Part of what is interesting about using the presence of contingent language for separating responses is the fact that taking a suppositional stance turns out not to be very popular perspective, despite the fact that almost all of the questions are phrased in the subjunctive mood. Sixty-eight percent of the respondents did not use any contingent language according to the Docuscope tagger. In the survey, the more common stance is a flat out denial of any demands upon one’s privacy (though this seems unlikely to be as common in real-world decisions). Contingent answers, by contrast, exhibit a willingness to play along. The Pew Research Center administered this survey digitally, with participants recording their answers at computer terminals. Indeed, responses even begin to suspect the survey itself as an encroachment at times.</p>
+
+<blockquote>
+  <p>“I do not want to give any answer to this.”</p>
+</blockquote>
+
+<p>This arrangement is fitting since the method of the survey conveniently echoes the typical media interface in which commercial demands are made upon privacy – the screen. Media historian Lisa Gitelman links the plane of the screen to what Walter Benjamin calls the ‘dictatorial perpendicular’ of modern reading.<a href="#fn1"><sup>2</sup></a><a href="#fn1"></a> Locating the screen in its natural post-capitalist habitat, Gitelman explains that “the office walls contain cubicles, the cubicles contain screens, the screens contain windows, and the windows contain page images. These vertical surfaces nest within each other, interfacing like a sequence of Russian dolls, waiting to funnel attention toward documents as if their very perpendicular sequence could ward off distraction” (130).</p>
+
+<p>Even outside of the workplace, screens prescribe conditions of attention and use that proliferate the number and kinds of spaces in which private content might reside. Contingent responses to the Pew Survey index users grappling with the circumstances of new and vulnerable private spaces.</p>
+
+<p><em>One response to a question regarding access to one’s phone camera and location:</em></p>
+
+<blockquote>
+  <p>Because it is not a good idea. By giving anyone access to our camera and your location would mean they could activate your camera anytime without your permission. This means they could spy on you any time they wanted to without your knowledge. To me, this would be a huge invasion of privacy.</p>
+</blockquote>
+
+<p>In the emergent environment of digital media, privacy cannot properly be delimited to a physical space (although the vehement rejections of any type of home monitoring in the survey responses indicate that this circumstance has not been accepted calmly). Being connected creates a paradoxical condition for privacy. As media theorist Wendy Chun suggests, “Internet users are curiously inside out — they are framed as private subjects exposed in public.”<a href="#fn3"><sup>4</sup></a><a href="#fn3"></a> Digital media is governed by a “logic of containment, which is always imagined as already transgressed” (13). The word <em>imagined</em> is key here. Private material, data, information is distributed, networked, and re-sold to the point that we can really only imagine the borders of our private lives. The concept of privacy might then be more accurately located in the context of performance, play, heuristic, or supposition, rather than in Arendt’s four walls. It is fluid and demands to be continually re-defined, re-constituted, and re-imagined.</p>
+
+<h2 id="references">References</h2>
+
+<p><a id="fn0"></a> 
+   1. Hannah Arendt, <em>The Human Condition</em>, 2nd ed. (Chicago: University of Chicago, 1958), 71.</p>
+
+<p><a id="fn1"></a> 
+    2. Lisa Gitelman, <em>Paper Knowledge: Toward a Media History of Documents</em>, (Durham, NC: Duke University Press, 2014), 129.</p>
+
+<p><a id="fn2"></a> 
+    3. Jeremy Bruner, <em>Actual Minds, Possible Worlds</em>, (Cambridge: Harvard University Press, 1987), 26.</p>
+
+<p><a id="fn3"></a> 
+    4. Wendy Hui Kyong Chun, <em>Updating to Remain the Same: Habitual New Media</em>, (Cambridge, MA: MIT Press, 2016), 12.</p>
+
+<table style="border-style: hidden; border-collapse: collapse;">
+
+</table>
+
+                    ]]>
+                </content:encoded>
+                <guid isPermaLink="false">/2016/10/04/privacy-performed/</guid>
+                <description>
+                    
+                </description>
+                <pubDate>Tue, 04 Oct 2016 10:27:24 -0400</pubDate>
+                <author>Collin Jennings</author>
+            </item>
+        
+    
+        
+            <item>
                 <title>The Language of Notation and Imaginative Writing</title>
-                <link>/2016/07/22/language-notation/</link>
+                <link>http://collinjennings.com/2016/07/22/language-notation/</link>
                 <content:encoded>
                     <![CDATA[
                     <p>What are the conditions under which very different words are brought together in writing? Are varied word combinations predisposed to particular genres or discourses? Are there types of words that could be said to constitute lexical situations that would not otherwise occur? And, when words that are not typically used in the same context co-occur, what are they doing? I am going to report the results of a text analysis experiment designed to begin to address these questions. Recent advances in semantic modeling (from topic modeling to word embeddings) make it relatively easy to describe the statistical likelihood of a given set of words to co-occur. Methods in semantic modeling start from the premises that words tend to occur in particular linguistic contexts, and we can decipher the meaning of an unknown word based upon the words that appear near it. While many humanists (like me) interested in text analysis have begun to explore the mathematics of operationalizing these premises, corpus linguists have been thinking about modeling language in this way since the 1940s and 50s. Early theorist of the “distributional structure” of language, Zellig Harris, explains that, “The perennial man in the street believes that when he speaks he freely puts together whatever elements have the meanings he intends; but he does so only by choosing members of those classes that regularly occur together and in the order in which these classes occur.”<a href="#fn0"><sup>1</sup></a><a href="#fn0"></a> His contemporary, J. R. Firth, put the claim even more plainly in his now famous formulation: “You shall know a word by the company it keeps.”<a href="#fn1"><sup>2</sup></a><a href="#fn1"></a> Since these foundational theories, linguists have produced methods for mathematically representing the tendencies of language. In this experiment, I focus on word space models, which represent the distribution of words in a corpus as vectors with hundreds or thousands of dimensions wherein proximity in the vector space corresponds to semantic similarity. The vector position for any given word represents a probabilistic profile regarding the lexical contexts in which one would expect to find that word. As a consequence, word vectors can be added and subtracted to find the words most similar in the model to the resulting composite vector.</p>
@@ -193,156 +279,6 @@ Above I observed the prevalence of terms from technical discourses, and here we 
                     
                 </description>
                 <pubDate>Fri, 22 Jul 2016 10:27:24 -0400</pubDate>
-                <author>Collin Jennings</author>
-            </item>
-        
-    
-        
-            <item>
-                <title>Pixyll in Action</title>
-                <link>/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</link>
-                <content:encoded>
-                    <![CDATA[
-                    <p>There is a significant amount of subtle, yet precisely calibrated, styling to ensure
-that your content is emphasized while still looking aesthetically pleasing.</p>
-
-<p>All links are easy to <a href="#">locate and discern</a>, yet don’t detract from the <a href="#">harmony
-of a paragraph</a>. The <em>same</em> goes for italics and <strong>bold</strong> elements. Even the the strikeout
-works if <del>for some reason you need to update your post</del>. For consistency’s sake,
-<ins>The same goes for insertions</ins>, of course.</p>
-
-<h3 id="code-with-syntax-highlighting">Code, with syntax highlighting</h3>
-
-<p>Here’s an example of some ruby code with line anchors.</p>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1"># The most awesome of classes</span>
-<span class="k">class</span> <span class="nc">Awesome</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Base</span>
-  <span class="kp">include</span> <span class="no">EvenMoreAwesome</span>
-
-  <span class="n">validates_presence_of</span> <span class="ss">:something</span>
-  <span class="n">validates</span> <span class="ss">:email</span><span class="p">,</span> <span class="ss">email_format: </span><span class="kp">true</span>
-
-  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">email</span><span class="p">,</span> <span class="nb">name</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">)</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">email</span> <span class="o">=</span> <span class="n">email</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">name</span> <span class="o">=</span> <span class="nb">name</span>
-    <span class="nb">self</span><span class="p">.</span><span class="nf">favorite_number</span> <span class="o">=</span> <span class="mi">12</span>
-    <span class="nb">puts</span> <span class="s1">'created awesomeness'</span>
-  <span class="k">end</span>
-
-  <span class="k">def</span> <span class="nf">email_format</span>
-    <span class="n">email</span> <span class="o">=~</span> <span class="sr">/\S+@\S+\.\S+/</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>Here’s some CSS:</p>
-
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="nc">.foobar</span> <span class="p">{</span>
-  <span class="c">/* Named colors rule */</span>
-  <span class="nl">color</span><span class="p">:</span> <span class="no">tomato</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here’s some JavaScript:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">isPresent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'is-present'</span><span class="p">)</span>
-
-<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">doStuff</span><span class="p">(</span><span class="nx">things</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">if</span> <span class="p">(</span><span class="nx">isPresent</span><span class="p">(</span><span class="nx">things</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">doOtherStuff</span><span class="p">(</span><span class="nx">things</span><span class="p">)</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here’s some HTML:</p>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"m0 p0 bg-blue white"</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"h1"</span><span class="nt">&gt;</span>Hello, world!<span class="nt">&lt;/h3&gt;</span>
-<span class="nt">&lt;/div&gt;</span></code></pre></figure>
-
-<h1 id="headings">Headings!</h1>
-
-<p>They’re responsive, and well-proportioned (in <code class="highlighter-rouge">padding</code>, <code class="highlighter-rouge">line-height</code>, <code class="highlighter-rouge">margin</code>, and <code class="highlighter-rouge">font-size</code>).
-They also heavily rely on the awesome utility, <a href="http://www.basscss.com/">BASSCSS</a>.</p>
-
-<h5 id="they-draw-the-perfect-amount-of-attention">They draw the perfect amount of attention</h5>
-
-<p>This allows your content to have the proper informational and contextual hierarchy. Yay.</p>
-
-<h3 id="there-are-lists-too">There are lists, too</h3>
-
-<ul>
-  <li>Apples</li>
-  <li>Oranges</li>
-  <li>Potatoes</li>
-  <li>Milk</li>
-</ul>
-
-<ol>
-  <li>Mow the lawn</li>
-  <li>Feed the dog</li>
-  <li>Dance</li>
-</ol>
-
-<h3 id="images-look-great-too">Images look great, too</h3>
-
-<p><img src="https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png" alt="desk" /></p>
-
-<p><em><img src="https://cloud.githubusercontent.com/assets/1424573/3378137/abac6d7c-fbe6-11e3-8e09-55745b6a8176.png" alt="desk" /></em></p>
-
-<h3 id="there-are-also-pretty-colors">There are also pretty colors</h3>
-
-<p>Also the result of <a href="http://www.basscss.com/">BASSCSS</a>, you can <span class="bg-dark-gray white">highlight</span> certain components
-of a <span class="red">post</span> <span class="mid-gray">with</span> <span class="green">CSS</span> <span class="orange">classes</span>.</p>
-
-<p>I don’t recommend using blue, though. It looks like a <span class="blue">link</span>.</p>
-
-<h3 id="footnotes">Footnotes!</h3>
-
-<p>Markdown footnotes are supported, and they look great! Simply put e.g. <code class="highlighter-rouge">[^1]</code> where you want the footnote to appear,<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and then add
-the reference at the end of your markdown.</p>
-
-<h3 id="stylish-blockquotes-included">Stylish blockquotes included</h3>
-
-<p>You can use the markdown quote syntax, <code class="highlighter-rouge">&gt;</code> for simple quotes.</p>
-
-<blockquote>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.</p>
-</blockquote>
-
-<p>However, you need to inject html if you’d like a citation footer. I will be working on a way to
-hopefully sidestep this inconvenience.</p>
-
-<blockquote>
-  <p>
-    Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.
-  </p>
-  <footer><cite title="Antoine de Saint-Exupéry">Antoine de Saint-Exupéry</cite></footer>
-</blockquote>
-
-<h3 id="theres-more-being-added-all-the-time">There’s more being added all the time</h3>
-
-<p>Checkout the <a href="https://github.com/johnotander/pixyll">Github repository</a> to request,
-or add, features.</p>
-
-<p>Happy writing.</p>
-
-<hr />
-
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p>Important information that may distract from the main text can go in footnotes. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
-
-                    ]]>
-                </content:encoded>
-                <guid isPermaLink="false">/jekyll/pixyll/2014/06/10/see-pixyll-in-action/</guid>
-                <description>
-                    
-                    See what the different elements looks like. Your markdown has never looked better. I promise.
-                    
-                </description>
-                <pubDate>Tue, 10 Jun 2014 08:31:19 -0400</pubDate>
                 <author>Collin Jennings</author>
             </item>
         
