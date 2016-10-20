@@ -1,9 +1,13 @@
+---
+layout: post
+title:  "Mining Your Search Results"
+date:   2016-04-25 10:27:24 -0400
 
-!['logo'](http://collinjennings.com/stop_frisk/search_logo.png)
+---
+!['logo']({{site.baseurl}}/assets/search_logo.jpg)
 
-# Mining your Search Results with JSTOR Data for Research: 
-*Mapping the shape of digital interdisciplinarity*
-
+This tutorial was the third part of the "Search and Surveillance" Workshop series that I created for Bard College. It describes a technique for producing an co-occurrence network between search terms and journals listed in the results for those terms when used to query JSTOR's Data for Research service. The rationale for producing such a network comes from my interest in the relationship between search and new understandings of disciplinarity. Put simply, how has search re-made our understanding of disciplinary boundaries? I came to this line of inquiry from my work, as a grad assistant, with Lisa Gitelman on the relationship between JSTOR and search. Lisa has published "Searching and Thinking about Searching JSTOR" in the Search Forum from *Representations* 127.1. 
+ 
 In this tutorial, we will: 
 
 - Import Search metadata from *JSTOR Data for Research*
@@ -12,8 +16,6 @@ In this tutorial, we will:
 
 
 ### Import necessary libraries and functions
-
-
 ```python
 import re
 import os.path
@@ -284,17 +286,7 @@ plt.show()
 
 
 
-![png](output_26_1.png)
+![terms]({{site.baseurl}}/assets/output_26_1.png)
 
 
-#### Check out some basic information on our graph
 
-
-```python
-print(nx.info(G))
-```
-
-
-```python
-print(community.modularity(part,G))
-```
