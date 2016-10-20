@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: default
 title: PCA features for Privacy Performed at Scale Potluck
 permalink: /pca-features.html
-tags: potluck
 ---
+
 Here is the sorted list of Docuscope LATs for the first principle component:
 ![feature 1]({{site.baseurl/assets/pca1.png}})
 
