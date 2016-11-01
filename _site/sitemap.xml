@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://collinjennings.com/2016/10/31/2016-text-generation/</loc>
+<lastmod>2016-10-31T10:27:24-04:00</lastmod>
+</url>
+<url>
 <loc>http://collinjennings.com/2016/10/04/privacy-performed/</loc>
 <lastmod>2016-10-04T10:27:24-04:00</lastmod>
 </url>
@@ -50,6 +54,9 @@
 </url>
 <url>
 <loc>http://collinjennings.com/thanks/</loc>
+</url>
+<url>
+<loc>http://collinjennings.com/page2/</loc>
 </url>
 <url>
 <loc>http://collinjennings.com/extras/footer.html</loc>
