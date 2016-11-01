@@ -10,16 +10,13 @@
         <title>Creating Computer-Generated Poetry</title>
         <description>&lt;p&gt;This is the notebook that Sven Anderson and I used for our “Family Weekend” class over the weekend. We began the class with two poems from an NPR article called, “&lt;a href=&quot;http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems&quot;&gt;Human or Machine: Can you tell who wrote these poems?&lt;/a&gt;”&lt;/p&gt;
 
-&lt;p&gt;The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus.&lt;/p&gt;
+&lt;p&gt;The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (&lt;code class=&quot;highlighter-rouge&quot;&gt;functions.py&lt;/code&gt;) to make it easier to read. You can access those functions and the accompanying text files &lt;a href=&quot;https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0&quot;&gt;here&lt;/a&gt;.)&lt;/p&gt;
 
 &lt;h3 id=&quot;objective-we-will-be-able-to-articulate-specific-features-of-poetic-writing-that-can-distinguish-computer-generated-poems-from-ones-written-by-people&quot;&gt;Objective: We will be able to articulate specific features of poetic writing that can distinguish computer-generated poems from ones written by people.&lt;/h3&gt;
 
 &lt;p&gt;In this class, we’ll be working with python code in this &lt;a href=&quot;http://jupyter.org&quot;&gt;Jupyter notebook&lt;/a&gt; interface. What’s great about this platform is that we can easily move between formatted text (as illustrated here), code, images, and pretty much any other type of digital object.&lt;/p&gt;
 
 &lt;p&gt;We will use this notebook to produce a randomly-generated poem based on a particular poet’s sytle.&lt;/p&gt;
-
-&lt;p&gt;Let’s begin with a very difficult simple question: 
-### &lt;em&gt;What is poetic style?&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/wordCloud.png&quot; alt=&quot;lincolnCloud&quot; /&gt;
 A word cloud generated from Abraham Lincoln’s &lt;em&gt;Gettysburg Address&lt;/em&gt;. The size of the words correspond to their frequency in the speech.&lt;/p&gt;

@@ -15,16 +15,13 @@
                     <![CDATA[
                     <p>This is the notebook that Sven Anderson and I used for our “Family Weekend” class over the weekend. We began the class with two poems from an NPR article called, “<a href="http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems">Human or Machine: Can you tell who wrote these poems?</a>”</p>
 
-<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus.</p>
+<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (<code class="highlighter-rouge">functions.py</code>) to make it easier to read. You can access those functions and the accompanying text files <a href="https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0">here</a>.)</p>
 
 <h3 id="objective-we-will-be-able-to-articulate-specific-features-of-poetic-writing-that-can-distinguish-computer-generated-poems-from-ones-written-by-people">Objective: We will be able to articulate specific features of poetic writing that can distinguish computer-generated poems from ones written by people.</h3>
 
 <p>In this class, we’ll be working with python code in this <a href="http://jupyter.org">Jupyter notebook</a> interface. What’s great about this platform is that we can easily move between formatted text (as illustrated here), code, images, and pretty much any other type of digital object.</p>
 
 <p>We will use this notebook to produce a randomly-generated poem based on a particular poet’s sytle.</p>
-
-<p>Let’s begin with a very difficult simple question: 
-### <em>What is poetic style?</em></p>
 
 <p><img src="/assets/wordCloud.png" alt="lincolnCloud" />
 A word cloud generated from Abraham Lincoln’s <em>Gettysburg Address</em>. The size of the words correspond to their frequency in the speech.</p>

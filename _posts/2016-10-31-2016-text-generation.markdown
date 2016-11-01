@@ -6,7 +6,7 @@ date:   2016-10-31 10:27:24 -0400
 ---
 This is the notebook that Sven Anderson and I used for our "Family Weekend" class over the weekend. We began the class with two poems from an NPR article called, "[Human or Machine: Can you tell who wrote these poems?](http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems)"
 
-The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating "poetry" represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet's corpus.
+The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating "poetry" represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet's corpus. (Just to note, some of the functions in this script are in a separate file (`functions.py`) to make it easier to read. You can access those functions and the accompanying text files [here](https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0).)
 
 ### Objective: We will be able to articulate specific features of poetic writing that can distinguish computer-generated poems from ones written by people. 
 
