@@ -18,7 +18,7 @@ Let's begin with a very difficult simple question:
 ### *What is poetic style?* 
 
 
-![lincolnCloud]({{site.baseurl}}/assets/WordCloud.png)
+![lincolnCloud]({{site.baseurl}}/assets/wordCloud.png)
 A word cloud generated from Abraham Lincoln's *Gettysburg Address*. The size of the words correspond to their frequency in the speech.
 
 #### How might we mathematically represent authorial choice?

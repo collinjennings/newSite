@@ -26,7 +26,7 @@
 <p>Let’s begin with a very difficult simple question: 
 ### <em>What is poetic style?</em></p>
 
-<p><img src="/assets/WordCloud.png" alt="lincolnCloud" />
+<p><img src="/assets/wordCloud.png" alt="lincolnCloud" />
 A word cloud generated from Abraham Lincoln’s <em>Gettysburg Address</em>. The size of the words correspond to their frequency in the speech.</p>
 
 <h4 id="how-might-we-mathematically-represent-authorial-choice">How might we mathematically represent authorial choice?</h4>
