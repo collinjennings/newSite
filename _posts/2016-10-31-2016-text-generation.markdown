@@ -14,10 +14,6 @@ In this class, we'll be working with python code in this <a href="http://jupyter
 
 We will use this notebook to produce a randomly-generated poem based on a particular poet's sytle. 
 
-Let's begin with a very difficult simple question: 
-### *What is poetic style?* 
-
-
 ![lincolnCloud]({{site.baseurl}}/assets/wordCloud.png)
 A word cloud generated from Abraham Lincoln's *Gettysburg Address*. The size of the words correspond to their frequency in the speech.
 
