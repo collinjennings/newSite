@@ -12,10 +12,10 @@ The question of what constitutes poetic style has and will continue to produce v
 
 In this class, we'll be working with python code in this <a href="http://jupyter.org">Jupyter notebook</a> interface. What's great about this platform is that we can easily move between formatted text (as illustrated here), code, images, and pretty much any other type of digital object. 
 
-We will use this notebook to produce a randomly-generated poem based on a particular poet's sytle. 
+We will use this notebook to produce a randomly-generated poem based on a particular poet's style. 
 
 ![lincolnCloud]({{site.baseurl}}/assets/wordCloud.png)
-A word cloud generated from Abraham Lincoln's *Gettysburg Address*. The size of the words correspond to their frequency in the speech.
+*A word cloud generated from Abraham Lincoln's *Gettysburg Address*. The size of the words correspond to their frequency in the speech.*
 
 #### How might we mathematically represent authorial choice?
 We can start by attempting to simulate the process by which particular authors make stylistic choices -- for instance, how they choose which words to use. 
