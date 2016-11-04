@@ -124,7 +124,7 @@ delight
 </span></code></pre>
 </div>
 
-<p>We can choose the next word based on which words are likely to follow the first word, according to the poet’s usage. In Shakespeares’s Sonnets, <em>thou</em> is the most likely word to follow <em>compare</em>.</p>
+<p>We can choose the next word based on which words are likely to follow the first word, according to the poet’s usage. In Shakespeare’s Sonnets, <em>thou</em> is the most likely word to follow <em>compare</em>.</p>
 
 <p>With this process of randomly choosing words likely to follow one another we can build entire poems. In the following algorithm, we combine this process with a method of making the poems rhyme by matching the last word of every odd line with a random rhyming word in every even line.</p>
 

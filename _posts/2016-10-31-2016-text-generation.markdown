@@ -118,7 +118,7 @@ print(shakespeareBigrams['compare'])
     {'thou': 0.3333333333333333, 'with': 0.16666666666666666, 'myself': 0.16666666666666666, 'thee': 0.16666666666666666, 'them': 0.16666666666666666}
 
 
-We can choose the next word based on which words are likely to follow the first word, according to the poet's usage. In Shakespeares's Sonnets, *thou* is the most likely word to follow *compare*. 
+We can choose the next word based on which words are likely to follow the first word, according to the poet's usage. In Shakespeare's Sonnets, *thou* is the most likely word to follow *compare*. 
 
 With this process of randomly choosing words likely to follow one another we can build entire poems. In the following algorithm, we combine this process with a method of making the poems rhyme by matching the last word of every odd line with a random rhyming word in every even line. 
 
