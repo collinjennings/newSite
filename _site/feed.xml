@@ -3,8 +3,8 @@
   <channel>
     <title>Collin Jennings</title>
     <description></description>
-    <link>http://collinjennings.com/</link>
-    <atom:link href="http://collinjennings.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Creating Computer-Generated Poetry</title>
@@ -182,8 +182,8 @@ he stayed away upon the merchant smiled branscome
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Mon, 31 Oct 2016 10:27:24 -0400</pubDate>
-        <link>http://collinjennings.com/2016/10/31/2016-text-generation/</link>
-        <guid isPermaLink="true">http://collinjennings.com/2016/10/31/2016-text-generation/</guid>
+        <link>http://localhost:4000/2016/10/31/2016-text-generation/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/31/2016-text-generation/</guid>
       </item>
     
       <item>
@@ -258,8 +258,8 @@ he stayed away upon the merchant smiled branscome
 &lt;/table&gt;
 </description>
         <pubDate>Tue, 04 Oct 2016 10:27:24 -0400</pubDate>
-        <link>http://collinjennings.com/2016/10/04/privacy-performed/</link>
-        <guid isPermaLink="true">http://collinjennings.com/2016/10/04/privacy-performed/</guid>
+        <link>http://localhost:4000/2016/10/04/privacy-performed/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/10/04/privacy-performed/</guid>
       </item>
     
       <item>
@@ -436,8 +436,8 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 &lt;/table&gt;
 </description>
         <pubDate>Fri, 22 Jul 2016 10:27:24 -0400</pubDate>
-        <link>http://collinjennings.com/2016/07/22/language-notation/</link>
-        <guid isPermaLink="true">http://collinjennings.com/2016/07/22/language-notation/</guid>
+        <link>http://localhost:4000/2016/07/22/language-notation/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/07/22/language-notation/</guid>
       </item>
     
       <item>
@@ -695,8 +695,8 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 
 </description>
         <pubDate>Mon, 25 Apr 2016 10:27:24 -0400</pubDate>
-        <link>http://collinjennings.com/2016/04/25/mining-search/</link>
-        <guid isPermaLink="true">http://collinjennings.com/2016/04/25/mining-search/</guid>
+        <link>http://localhost:4000/2016/04/25/mining-search/</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/04/25/mining-search/</guid>
       </item>
     
   </channel>
