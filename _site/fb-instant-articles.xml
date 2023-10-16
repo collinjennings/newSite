@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title></title>
-    <link>http://localhost:4000</link>
+    <link>http://collinjennings.com</link>
     <description>
       
     </description>
@@ -10,7 +10,7 @@
         
             <item>
                 <title>Creating Computer-Generated Poetry</title>
-                <link>http://localhost:4000/2016/10/31/2016-text-generation/</link>
+                <link>http://collinjennings.com/2016/10/31/2016-text-generation/</link>
                 <content:encoded>
                     <![CDATA[
                     <p>This is the notebook that Sven Anderson and I used for our “Family Weekend” class over the weekend. We began the class with two poems from an NPR article called, “<a href="http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems">Human or Machine: Can you tell who wrote these poems?</a>”</p>
@@ -200,7 +200,7 @@ he stayed away upon the merchant smiled branscome
         
             <item>
                 <title>Privacy Performed at Scale</title>
-                <link>http://localhost:4000/2016/10/04/privacy-performed/</link>
+                <link>http://collinjennings.com/2016/10/04/privacy-performed/</link>
                 <content:encoded>
                     <![CDATA[
                     <p>You wear a Fitbit during your jog in the morning, swipe your grocery loyalty card when you checkout in the evening, and share your contacts when you play Candy Crush at night. This “Internet of Things” offers automation, customization, and convenience and, in turn, demands access. The daily choices to allow access or not repeatedly require you to produce the contours of your private life, to open certain spaces and keep others closed. In this collaborative potluck, we asked: how do those contours take shape? (If your first question, is what the heck is a critical potluck? In short, it’s a workshop-like collaborative event; this one was held on September 15 at Bard. Check our handy <a href="/criticalPotluck.html">guide</a> for more details.)</p>
@@ -286,7 +286,7 @@ he stayed away upon the merchant smiled branscome
         
             <item>
                 <title>The Language of Notation and Imaginative Writing</title>
-                <link>http://localhost:4000/2016/07/22/language-notation/</link>
+                <link>http://collinjennings.com/2016/07/22/language-notation/</link>
                 <content:encoded>
                     <![CDATA[
                     <p>What are the conditions under which very different words are brought together in writing? Are varied word combinations predisposed to particular genres or discourses? Are there types of words that could be said to constitute lexical situations that would not otherwise occur? And, when words that are not typically used in the same context co-occur, what are they doing? I am going to report the results of a text analysis experiment designed to begin to address these questions. Recent advances in semantic modeling (from topic modeling to word embeddings) make it relatively easy to describe the statistical likelihood of a given set of words to co-occur. Methods in semantic modeling start from the premises that words tend to occur in particular linguistic contexts, and we can decipher the meaning of an unknown word based upon the words that appear near it. While many humanists (like me) interested in text analysis have begun to explore the mathematics of operationalizing these premises, corpus linguists have been thinking about modeling language in this way since the 1940s and 50s. Early theorist of the “distributional structure” of language, Zellig Harris, explains that, “The perennial man in the street believes that when he speaks he freely puts together whatever elements have the meanings he intends; but he does so only by choosing members of those classes that regularly occur together and in the order in which these classes occur.”<a href="#fn0"><sup>1</sup></a><a href="#fn0"></a> His contemporary, J. R. Firth, put the claim even more plainly in his now famous formulation: “You shall know a word by the company it keeps.”<a href="#fn1"><sup>2</sup></a><a href="#fn1"></a> Since these foundational theories, linguists have produced methods for mathematically representing the tendencies of language. In this experiment, I focus on word space models, which represent the distribution of words in a corpus as vectors with hundreds or thousands of dimensions wherein proximity in the vector space corresponds to semantic similarity. The vector position for any given word represents a probabilistic profile regarding the lexical contexts in which one would expect to find that word. As a consequence, word vectors can be added and subtracted to find the words most similar in the model to the resulting composite vector.</p>
@@ -474,7 +474,7 @@ Above I observed the prevalence of terms from technical discourses, and here we 
         
             <item>
                 <title>Mining Your Search Results</title>
-                <link>http://localhost:4000/2016/04/25/mining-search/</link>
+                <link>http://collinjennings.com/2016/04/25/mining-search/</link>
                 <content:encoded>
                     <![CDATA[
                     <p><img src="/assets/search_logo.jpg" alt="'logo'" /></p>
