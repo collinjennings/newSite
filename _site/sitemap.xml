@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://collinjennings.com/2016/10/31/2016-text-generation/</loc>
-<lastmod>2016-10-31T10:27:24-04:00</lastmod>
-</url>
-<url>
-<loc>http://collinjennings.com/2016/10/04/privacy-performed/</loc>
-<lastmod>2016-10-04T10:27:24-04:00</lastmod>
+<loc>http://collinjennings.com/2016/04/25/mining-search/</loc>
+<lastmod>2016-04-25T10:27:24-04:00</lastmod>
 </url>
 <url>
 <loc>http://collinjennings.com/2016/07/22/language-notation/</loc>
 <lastmod>2016-07-22T10:27:24-04:00</lastmod>
 </url>
 <url>
-<loc>http://collinjennings.com/2016/04/25/mining-search/</loc>
-<lastmod>2016-04-25T10:27:24-04:00</lastmod>
+<loc>http://collinjennings.com/2016/10/04/privacy-performed/</loc>
+<lastmod>2016-10-04T10:27:24-04:00</lastmod>
+</url>
+<url>
+<loc>http://collinjennings.com/2016/10/31/2016-text-generation/</loc>
+<lastmod>2016-10-31T10:27:24-04:00</lastmod>
 </url>
 <url>
 <loc>http://collinjennings.com/extras/2014-06-08-pixyll-has-pagination/</loc>
@@ -32,9 +32,6 @@
 <loc>http://collinjennings.com/extras/2015-07-11-announcing-pixyll-version-2/</loc>
 </url>
 <url>
-<loc>http://collinjennings.com/404.html</loc>
-</url>
-<url>
 <loc>http://collinjennings.com/about/</loc>
 </url>
 <url>
@@ -42,6 +39,9 @@
 </url>
 <url>
 <loc>http://collinjennings.com/criticalPotluck.html</loc>
+</url>
+<url>
+<loc>http://collinjennings.com/englightenmentlinks/</loc>
 </url>
 <url>
 <loc>http://collinjennings.com/</loc>
@@ -60,10 +60,10 @@
 </url>
 <url>
 <loc>http://collinjennings.com/extras/footer.html</loc>
-<lastmod>2016-08-24T10:00:30-04:00</lastmod>
+<lastmod>2023-09-05T12:58:18-04:00</lastmod>
 </url>
 <url>
 <loc>http://collinjennings.com/mining_search_results.html</loc>
-<lastmod>2015-12-04T23:16:04-05:00</lastmod>
+<lastmod>2023-09-05T12:58:18-04:00</lastmod>
 </url>
 </urlset>

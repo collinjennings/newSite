@@ -17,7 +17,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Collin Jennings" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201611041249" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202310161042" type="text/css">
 
     <!-- Fonts -->
     
@@ -115,6 +115,12 @@
 
     
 
+    
+
+    
+
+    
+
 
     
 
@@ -132,6 +138,12 @@
 
     
         <a href="/contact/">Contact</a>
+    
+
+    
+
+    
+
     
 
     
@@ -218,7 +230,7 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 <p>Here’s some JavaScript:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">isPresent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'is-present'</span><span class="p">)</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">isPresent</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">is-present</span><span class="dl">'</span><span class="p">)</span>
 
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">doStuff</span><span class="p">(</span><span class="nx">things</span><span class="p">)</span> <span class="p">{</span>
   <span class="k">if</span> <span class="p">(</span><span class="nx">isPresent</span><span class="p">(</span><span class="nx">things</span><span class="p">))</span> <span class="p">{</span>
@@ -234,7 +246,7 @@ works if <del>for some reason you need to update your post</del>. For consistenc
 
 <h1 id="headings">Headings!</h1>
 
-<p>They’re responsive, and well-proportioned (in <code class="highlighter-rouge">padding</code>, <code class="highlighter-rouge">line-height</code>, <code class="highlighter-rouge">margin</code>, and <code class="highlighter-rouge">font-size</code>).
+<p>They’re responsive, and well-proportioned (in <code class="language-plaintext highlighter-rouge">padding</code>, <code class="language-plaintext highlighter-rouge">line-height</code>, <code class="language-plaintext highlighter-rouge">margin</code>, and <code class="language-plaintext highlighter-rouge">font-size</code>).
 They also heavily rely on the awesome utility, <a href="http://www.basscss.com/">BASSCSS</a>.</p>
 
 <h5 id="they-draw-the-perfect-amount-of-attention">They draw the perfect amount of attention</h5>
@@ -271,12 +283,12 @@ of a <span class="red">post</span> <span class="mid-gray">with</span> <span clas
 
 <h3 id="footnotes">Footnotes!</h3>
 
-<p>Markdown footnotes are supported, and they look great! Simply put e.g. <code class="highlighter-rouge">[^1]</code> where you want the footnote to appear,<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> and then add
+<p>Markdown footnotes are supported, and they look great! Simply put e.g. <code class="language-plaintext highlighter-rouge">[^1]</code> where you want the footnote to appear,<sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote" rel="footnote">1</a></sup> and then add
 the reference at the end of your markdown.</p>
 
 <h3 id="stylish-blockquotes-included">Stylish blockquotes included</h3>
 
-<p>You can use the markdown quote syntax, <code class="highlighter-rouge">&gt;</code> for simple quotes.</p>
+<p>You can use the markdown quote syntax, <code class="language-plaintext highlighter-rouge">&gt;</code> for simple quotes.</p>
 
 <blockquote>
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse quis porta mauris.</p>
@@ -301,10 +313,10 @@ or add, features.</p>
 
 <hr />
 
-<div class="footnotes">
+<div class="footnotes" role="doc-endnotes">
   <ol>
-    <li id="fn:1">
-      <p>Important information that may distract from the main text can go in footnotes. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    <li id="fn:1" role="doc-endnote">
+      <p>Important information that may distract from the main text can go in footnotes. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
     </li>
   </ol>
 </div>

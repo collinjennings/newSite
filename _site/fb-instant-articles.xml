@@ -15,7 +15,7 @@
                     <![CDATA[
                     <p>This is the notebook that Sven Anderson and I used for our “Family Weekend” class over the weekend. We began the class with two poems from an NPR article called, “<a href="http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems">Human or Machine: Can you tell who wrote these poems?</a>”</p>
 
-<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (<code class="highlighter-rouge">functions.py</code>) to make it easier to read. You can access those functions and the accompanying text files <a href="https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0">here</a>.)</p>
+<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (<code class="language-plaintext highlighter-rouge">functions.py</code>) to make it easier to read. You can access those functions and the accompanying text files <a href="https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0">here</a>.)</p>
 
 <h3 id="objective-we-will-be-able-to-articulate-specific-features-of-poetic-writing-that-can-distinguish-computer-generated-poems-from-ones-written-by-people">Objective: We will be able to articulate specific features of poetic writing that can distinguish computer-generated poems from ones written by people.</h3>
 
@@ -31,71 +31,62 @@
 
 <p>In programming, we produce simulations using <strong>algorithms</strong>, which are sets of rules for the computer to follow. They are basically computational recipes for turning a given input into an output. Here we create an algorithm in a <strong>function</strong> for calculating the tip for a meal.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tipCalculator</span> <span class="p">(</span><span class="n">mealTotal</span><span class="p">):</span> <span class="c">### Our "mealTotal" is our input. </span>
-    <span class="k">return</span> <span class="n">mealTotal</span> <span class="o">*</span> <span class="mf">0.20</span> <span class="o">+</span> <span class="n">mealTotal</span> <span class="c">### We add 20% of the total to the input to get our output</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tipCalculator</span> <span class="p">(</span><span class="n">mealTotal</span><span class="p">):</span> <span class="c1">### Our "mealTotal" is our input. 
+</span>    <span class="k">return</span> <span class="n">mealTotal</span> <span class="o">*</span> <span class="mf">0.20</span> <span class="o">+</span> <span class="n">mealTotal</span> <span class="c1">### We add 20% of the total to the input to get our output
+</span>
+<span class="c1">## We've created the function, now we can run it: 
+</span><span class="k">print</span><span class="p">(</span><span class="n">tipCalculator</span><span class="p">(</span><span class="mf">50.00</span><span class="p">))</span>
+</code></pre></div></div>
 
-<span class="c">## We've created the function, now we can run it: </span>
-<span class="k">print</span><span class="p">(</span><span class="n">tipCalculator</span><span class="p">(</span><span class="mf">50.00</span><span class="p">))</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>60.0
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>60.0
+</code></pre></div></div>
 
 <h4 id="now-lets-think-about-how-we-might-simulate-poetic-word-choice-to-produce-randomly-generated-poetry">Now let’s think about how we might simulate poetic word choice to produce randomly generated poetry.</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Load some functionality and some pre-computed probabilities.</span>
-<span class="kn">import</span> <span class="nn">functions</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load some functionality and some pre-computed probabilities.
+</span><span class="kn">import</span> <span class="nn">functions</span> 
 <span class="kn">import</span> <span class="nn">pickle</span> 
-<span class="n">dickinsonProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-</code></pre>
-</div>
+<span class="n">dickinsonProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'the'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'the'</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'heart'</span><span class="p">])</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>0.06506088945704097
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.06506088945704097
 0.0009419363520150709
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These numbers tell us the likelihood of picking each word if we were to draw them at random from the text: the more frequent the word in the text, the greater chance of choosing it.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> 
 <span class="k">def</span> <span class="nf">randomWord</span><span class="p">(</span><span class="n">probs</span><span class="p">):</span>
     <span class="s">'''Given probs, a dictionary of word probabilities, this
     returns a word according to how frequently that word is found
     in the dictionary.'''</span>
     <span class="n">rnum</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span>
     <span class="n">sumprob</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">probs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">sumprob</span> <span class="o">+=</span> <span class="n">probs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">sumprob</span> <span class="o">&gt;</span> <span class="n">rnum</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">k</span>
     <span class="k">return</span> <span class="n">k</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>We can simulate this process by using a function that randomly chooses words from Dickinson’s poetry, based on her word usage.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>drum
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drum
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># what happens if 10 is replaced by 20?</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># what happens if 10 is replaced by 20?
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> 
     <span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>since
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>since
 but
 them
 most
@@ -105,62 +96,57 @@ one
 repeal
 the
 delight
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This frequency-based approach gives us a way to simulate the poet’s process of choosing words. But after we choose a random word what comes next?</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">dickinsonBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-<span class="n">shakespeareProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-<span class="n">shakespeareBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dickinsonBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+<span class="n">shakespeareProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+<span class="n">shakespeareBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">shakespeareBigrams</span><span class="p">[</span><span class="s">'compare'</span><span class="p">])</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">shakespeareBigrams</span><span class="p">[</span><span class="s">'compare'</span><span class="p">])</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">'thou':</span><span class="w"> </span><span class="err">0.3333333333333333,</span><span class="w"> </span><span class="err">'with':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'myself':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'thee':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'them':</span><span class="w"> </span><span class="err">0.16666666666666666</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'thou': 0.3333333333333333, 'with': 0.16666666666666666, 'myself': 0.16666666666666666, 'thee': 0.16666666666666666, 'them': 0.16666666666666666}
+</code></pre></div></div>
 
 <p>We can choose the next word based on which words are likely to follow the first word, according to the poet’s usage. In Shakespeare’s Sonnets, <em>thou</em> is the most likely word to follow <em>compare</em>.</p>
 
 <p>With this process of randomly choosing words likely to follow one another we can build entire poems. In the following algorithm, we combine this process with a method of making the poems rhyme by matching the last word of every odd line with a random rhyming word in every even line.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generatePoem</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">,</span> <span class="n">poemLength</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generatePoem</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">,</span> <span class="n">poemLength</span><span class="p">):</span>
     <span class="n">poemLines</span> <span class="o">=</span> <span class="p">[]</span> 
-    <span class="c"># create poemLines from probabilities</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">poemLength</span><span class="p">):</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">generateFromBigrams</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">)</span>
-        <span class="n">poemLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="c1"># create poemLines from probabilities
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">poemLength</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">functions</span><span class="p">.</span><span class="n">generateFromBigrams</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">)</span>
+        <span class="n">poemLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="n">lineCount</span> <span class="o">=</span> <span class="mi">1</span> 
     <span class="n">newLines</span> <span class="o">=</span> <span class="p">[]</span> 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poemLines</span><span class="p">:</span> 
-        <span class="k">if</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c"># an odd line sets the rhyme</span>
-            <span class="n">rhymedLine</span> <span class="o">=</span> <span class="n">line</span> 
-            <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># an odd line sets the rhyme
+</span>            <span class="n">rhymedLine</span> <span class="o">=</span> <span class="n">line</span> 
+            <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">)</span>
             <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span> 
-        <span class="k">elif</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c"># an even line must match rhyme of </span>
-            <span class="n">rhymingLine</span> <span class="o">=</span> <span class="n">line</span>  <span class="c"># preceding line</span>
-            <span class="k">try</span><span class="p">:</span> 
-                <span class="k">if</span> <span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">functions</span><span class="o">.</span><span class="n">pronounce</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> 
-                    <span class="n">newWord</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">rhyme</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="n">rhymingLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newWord</span> <span class="c"># fix the rhyme to match</span>
-                    <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># an even line must match rhyme of 
+</span>            <span class="n">rhymingLine</span> <span class="o">=</span> <span class="n">line</span>  <span class="c1"># preceding line
+</span>            <span class="k">try</span><span class="p">:</span> 
+                <span class="k">if</span> <span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">functions</span><span class="p">.</span><span class="n">pronounce</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span> 
+                    <span class="n">newWord</span> <span class="o">=</span> <span class="n">functions</span><span class="p">.</span><span class="n">rhyme</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">rhymingLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newWord</span> <span class="c1"># fix the rhyme to match
+</span>                    <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
                     <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">except</span><span class="p">:</span> 
-                <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
+                <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
                 <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span> 
-    <span class="c"># Now we concatenate to a single string.</span>
-    <span class="n">fullPoem</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="c1"># Now we concatenate to a single string.
+</span>    <span class="n">fullPoem</span> <span class="o">=</span> <span class="p">[]</span> 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">newLines</span><span class="p">:</span>
-        <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-        <span class="n">fullLine</span> <span class="o">=</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
-        <span class="n">fullPoem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fullLine</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fullPoem</span><span class="p">)</span>
-</code></pre>
-</div>
+        <span class="n">line</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">fullLine</span> <span class="o">=</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
+        <span class="n">fullPoem</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fullLine</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fullPoem</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Now we can generate our own “poems” from the word choice of either Shakespeare or Emily Dickinson.</p>
 
@@ -170,10 +156,9 @@ delight
 
 <p>(I really like the concluding couplet of the Shakespearean poem.)</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">shakespeareProbs</span><span class="p">,</span> <span class="n">shakespeareBigrams</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span> <span class="p">))</span>
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>praises worse than at that i not so affined 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">shakespeareProbs</span><span class="p">,</span> <span class="n">shakespeareBigrams</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span> <span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>praises worse than at that i not so affined 
 that our time and eyes have might to give 
 in my bosoms ward but let me do forgive 
 yore those children nursed deliverd from serving with thee 
@@ -186,23 +171,20 @@ doubting the face should transport me that is kind
 enforced to my deepest sense to his brief affined 
 and gives thee back the past i have often 
 not my love thy store when days when acetaminophen 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="generate-dickinsonian-poery">Generate Dickinsonian Poery</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">,</span> <span class="n">dickinsonBigrams</span><span class="p">,</span> <span class="c">##, ##))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">,</span> <span class="n">dickinsonBigrams</span><span class="p">,</span> <span class="c1">##, ##))
+</span></code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>for heaven she had come nor simplified her 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for heaven she had come nor simplified her 
 consummate plush how cold i had the her 
 off for pearl then of love is finished 
 you lost was there came out time abolished 
 held but internal evidence gives us is overcome 
 he stayed away upon the merchant smiled branscome 
-</code></pre>
-</div>
+</code></pre></div></div>
 
                     ]]>
                 </content:encoded>
@@ -312,17 +294,15 @@ he stayed away upon the merchant smiled branscome
 <p><em>Two different semantic contexts of ‘bounds’</em> - 
 The values appearing next to the resulting words refer to the cosine similarity score between the composite vector (produced by adding the positive word vectors and subtracting the negative one) and the most similar word vectors in the word space model. The score indicates the proximity of the vectors in the model, which should correspond to their semantic similarity—the closer to 1, the more similar words.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s">'bounds'</span><span class="p">,</span> <span class="s">'leaps'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s">'limits'</span><span class="p">])[:</span><span class="mi">6</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s">'bounds'</span><span class="p">,</span> <span class="s">'leaps'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s">'limits'</span><span class="p">])[:</span><span class="mi">6</span><span class="p">])</span>
 <span class="k">print</span><span class="p">()</span>
-<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s">'bounds'</span><span class="p">,</span> <span class="s">'limits'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s">'leaps'</span><span class="p">])[:</span><span class="mi">6</span><span class="p">])</span>
-</code></pre>
-</div>
+<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">.</span><span class="n">most_similar</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s">'bounds'</span><span class="p">,</span> <span class="s">'limits'</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s">'leaps'</span><span class="p">])[:</span><span class="mi">6</span><span class="p">])</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>[('skips', 0.5588804483413696), ('leap', 0.5247325897216797), ('leapt', 0.5211300253868103), ('skipping', 0.5187863111495972), ('flings', 0.5138592720031738), ('alights', 0.5134779810905457)]
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[('skips', 0.5588804483413696), ('leap', 0.5247325897216797), ('leapt', 0.5211300253868103), ('skipping', 0.5187863111495972), ('flings', 0.5138592720031738), ('alights', 0.5134779810905457)]
 
 [('boundaries', 0.6185899376869202), ('limited', 0.595120906829834), ('limit', 0.5744596719741821), ('precincts', 0.5576064586639404), ('confined', 0.5283891558647156), ('confine', 0.5277968645095825)]
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>Any particular phrase or sentence will feature word combinations that more or less correspond to linguistic patterns represented in the word space model. Defining expectation in terms of the proximity between word vectors, what are the contexts in which unexpected words tend to occur? Do they appear in particular places, like those rare neighborhood bars that attract patrons across a wide demographic range? Or are aberrational word groupings brought together by specific terms, like Prince or Beyoncé drawing fans from all backgrounds?</p>
 
@@ -330,7 +310,7 @@ The values appearing next to the resulting words refer to the cosine similarity 
 
 <p>As the title of this post suggests, notation turns out to be very useful for explaining how the most unlikely linguistic situations are produced and organized in my corpus. I’m working with the publicly released portion of the <a href="http://www.textcreationpartnership.org/tcp-eebo/">Early English Books Online Text-Creation Partnership (EEBO-TCP)</a>, which consists of about 25,000 texts printed between 1475 and 1700. For this corpus, the preliminary answer to my opening string of questions is: there are particular terms that appear in the context of highly varied lexical contexts much more frequently than others, and these tend to be notational terms operating in a range of technical discourses (including heraldry, medicine, ornithology, and botany among others). Notation often refers to specific systems of signs and symbols used within a discipline like mathematics or music, but it can also be used in the manner that Barthes uses it above, to mean note-taking or annotating more generally. Most of the terms and contexts that I will present are best characterized by the first definition, but I will be using notation broadly to encompass both possible meanings because they each refer to processes of collecting unlike things—quantities, ideas, or observations—producing what Barthes calls “a layered text, a histology of cutups, a palimpsest.”<a href="#fn4"><sup>5</sup></a><a href="#fn4"></a>  In seventeenth-century English print, the language of notation performs this function by serving as a linguistic framework of arrangement and combination (as in a list of ingredients for a medical recipe) without requiring the grammatical entailments of linear prose. Considered from a literary historical perspective, the linguistic work of notation offers a useful point of contact for thinking about forms of abstraction and comparison, which produce the conditions under which disparate things are brought together in language. In the case of imaginative writing, we typically ascribe such tasks to tropes and figures, but critical theorists like Barthes and more recently literary historians, including Henry Turner, Elaine Freedgood, and Cannon Schmidt have drawn attention to the function of “technical, denotative, and literal” language in literary works.<a href="#fn5"><sup>6</sup></a><a href="#fn5"></a> As I unpack the results of this experiment, I will locate different forms of notation in relation to this critical conversation in order to highlight the imaginative functions of this mode of arranging language.</p>
 
-<p>I produced a 300-dimension word space model of a portion of the EEBO-TCP corpus (all of the texts printed between 1640 and 1700, from the English Civil Wars through the Restoration and Revolution of 1688, consisting of 18,752 texts) using the <a href="https://en.wikipedia.org/wiki/Word2vec"><code class="highlighter-rouge">word2vec</code></a> package in python. (I will refer to this as my Restoration model.)<a href="#fn6"><sup>7</sup></a><a href="#fn6"></a> <code class="highlighter-rouge">Word2Vec</code> uses a “shallow” neural network to generate a predictive word distribution model, rather than a count-based model. This approach makes it more efficient and easier to train, and some computer scientists argue that predictive word space models perform better than count-based ones, but this is a highly contested argument.<a href="#fn7"><sup>8</sup></a><a href="#fn7"></a> The challenge of using a predictive model for dealing with historical semantics, however, is that the training process makes it difficult to track how a term’s vector profile changes over time. To deal with this issue, I’ve taken a five-year subset (from 1678-1682, during the period of the Popish Plot and Exclusion Crisis in England) of the corpus used to train the model, so that I can compare the usage of words in the subset to their vector profiles in the larger Restoration model. The experiment that I present here then considers which words, occurring in texts printed between 1678 and 1682, tend to appear in contexts featuring the most varied combinations of terms relative to the larger Restoration model. While the results only directly refer to the five-year window of the subset, they appear to indicate a pattern that holds for most of the 1670s and 80s, based on other early investigations.</p>
+<p>I produced a 300-dimension word space model of a portion of the EEBO-TCP corpus (all of the texts printed between 1640 and 1700, from the English Civil Wars through the Restoration and Revolution of 1688, consisting of 18,752 texts) using the <a href="https://en.wikipedia.org/wiki/Word2vec"><code class="language-plaintext highlighter-rouge">word2vec</code></a> package in python. (I will refer to this as my Restoration model.)<a href="#fn6"><sup>7</sup></a><a href="#fn6"></a> <code class="language-plaintext highlighter-rouge">Word2Vec</code> uses a “shallow” neural network to generate a predictive word distribution model, rather than a count-based model. This approach makes it more efficient and easier to train, and some computer scientists argue that predictive word space models perform better than count-based ones, but this is a highly contested argument.<a href="#fn7"><sup>8</sup></a><a href="#fn7"></a> The challenge of using a predictive model for dealing with historical semantics, however, is that the training process makes it difficult to track how a term’s vector profile changes over time. To deal with this issue, I’ve taken a five-year subset (from 1678-1682, during the period of the Popish Plot and Exclusion Crisis in England) of the corpus used to train the model, so that I can compare the usage of words in the subset to their vector profiles in the larger Restoration model. The experiment that I present here then considers which words, occurring in texts printed between 1678 and 1682, tend to appear in contexts featuring the most varied combinations of terms relative to the larger Restoration model. While the results only directly refer to the five-year window of the subset, they appear to indicate a pattern that holds for most of the 1670s and 80s, based on other early investigations.</p>
 
 <p>In order to identify these results, I developed an average standard deviation measure (in collaboration with <a href="http://modelingliteraryhistory.org/">Michael Gavin</a>) that takes every context window for a given term in the five-year subset and finds the standard deviation between each vector position across the 300 dimensions for each word vector that co-occurs in a particular context window. The measure returns the standard deviation of the word vectors in a context window of the term, and that measure is averaged across all of the context windows for the term. The average standard deviation value then provides a proxy for determining how varied the lexical contexts tend to be for each term in the subset corpus (normalized to remove rare terms).<a href="#fn8"><sup>9</sup></a><a href="#fn8"></a> I also explored a method that used the average cosine similarity scores between a key term and the words in its context windows, which represents how likely that particular term would appear within its different contexts. The standard deviation measure, however, represents the variation between all of the words of the context window alone. As a consequence, the top scoring terms for the measure are not necessarily words that appear in the widest range of contexts; instead, the top terms are words that tend to appear in the most uncommon contexts in the subset overall. These are the words that most frequently occur at the center of rare word sequences.</p>
 
@@ -347,7 +327,7 @@ The values appearing next to the resulting words refer to the cosine similarity 
 <p>From these types, I can make some basic observations. First, the terms primarily come from different technical discourses, including medicine, natural philosophy/alchemy, and cooking/agriculture. These tend to be learned contexts featuring a high prevalence of abstruse language. In part because of the association with expert communities, the terms appear in genres that often combine English and Latin. While I was initially tempted to dismiss Latin terms because they appear in a foreign language context (and thus will unavoidably seem more varied in relation to a primarily English corpus), the Latin words are often performing a similar semantic function to the English terms on the list. Of course, the foreign language context is still a factor here, but I will suggest below that it’s not sufficient to explain the placement of the top terms on the list. What’s more is that it’s not practical to simply remove the Latin texts from the corpus because most of the terms are coming from genres that contain Latin and English in the same context, such as botany and ornithology. An unavoidable feature of seventeenth-century English print is that it is a multilingual environment.</p>
 
 <h2 id="cluster-of-top-150-terms-appearing-in-the-most-varied-contexts">Cluster of Top 150 Terms appearing in the Most Varied Contexts</h2>
-<p>To gain more context regarding the sources of the terms, I performed K-means cluster analysis on all of the context windows for the top 150 terms. This meant treating all of the context windows for each term as a single document and then seeing which of the ‘term documents’ are the most similar. This is not far off from the logic behind training a word vector model, and it similarly produces a result in which words that appear in similar contexts are located near one another and far from words appearing in dissimilar contexts. In the two-dimensional representation of the clusters, we can see that <em>bushel</em>, <em>bushels</em>, <em>wheat</em>, and <em>barly</em> are near one another in the upper-left corner, and <em>fraction</em>, <em>numerator</em>, and <em>denominator</em> are clustered in the bottom-right corner. In the <code class="highlighter-rouge">word2vec</code> model, <em>fraction</em> returns a similarity score of 0.81 with <em>numerator</em> and 0.82 with <em>denominator</em>, and <em>numerator</em> and <em>denominator</em> return a score of 0.94—all of which indicate very high semantic similarity between the terms and thus suggest that the k-means graph accurately reflects the proximity between terms in the larger word space model.<br />
+<p>To gain more context regarding the sources of the terms, I performed K-means cluster analysis on all of the context windows for the top 150 terms. This meant treating all of the context windows for each term as a single document and then seeing which of the ‘term documents’ are the most similar. This is not far off from the logic behind training a word vector model, and it similarly produces a result in which words that appear in similar contexts are located near one another and far from words appearing in dissimilar contexts. In the two-dimensional representation of the clusters, we can see that <em>bushel</em>, <em>bushels</em>, <em>wheat</em>, and <em>barly</em> are near one another in the upper-left corner, and <em>fraction</em>, <em>numerator</em>, and <em>denominator</em> are clustered in the bottom-right corner. In the <code class="language-plaintext highlighter-rouge">word2vec</code> model, <em>fraction</em> returns a similarity score of 0.81 with <em>numerator</em> and 0.82 with <em>denominator</em>, and <em>numerator</em> and <em>denominator</em> return a score of 0.94—all of which indicate very high semantic similarity between the terms and thus suggest that the k-means graph accurately reflects the proximity between terms in the larger word space model.<br />
 <img src="/assets/kmeansNotation.png" alt="top terms" /></p>
 
 <p>In k-means clustering (as with many topic modeling algorithms), the user has to select the number of clusters, and here I settled on four after identifying the top texts in which the words appeared in the subset. There appear to be four loose discourses in which these terms primarily occur. The table below breaks down the contents of these discourses:</p>
@@ -456,10 +436,10 @@ Above I observed the prevalence of terms from technical discourses, and here we 
    7. The model was trained on context windows spanning 5 words on either side of a given term, for words appearing at least 40 times in the corpus. I removed stopwords (using the standard nltk stopword list), but I did not stem or lemmatize the corpus. The model and a csv of the model contents can be downloaded <a href="https://www.dropbox.com/sh/vg0v4evj3ru4ziz/AAA60zxXvN_NYTMtDzmNx508a?dl=0">here</a>. Since I created the model, the Visualizing English Print team has publicly released a <a href="http://graphics.cs.wisc.edu/WP/vep/tcp/">version</a> of the EEBO-TCP corpus with standardized spelling, which, I expect, would produce a more accurate model for word sense disambiguation.</p>
 
 <p><a id="fn7"></a> 
-   8. For arguments supporting count-based approaches to semantic modeling, see Omer Levy, et al.,  “Improved Distributional Similarity with Lessons Learned from Word Embeddings,” <em>Transactions of the Association for Computational Linguistics</em> 3 (2015): 211-225; Omer Levy and Yoav Goldberg, “Linguistic Regularities in Sparse and Explicit Word Representations,” <em>Proceedings of the Eighteenth Conference on Computational Language Learning</em> (2014): 171-180. For the rationale behind predictive modeling, see Marco Baroni, et al., “Don’t count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors,” <em>Proceedings of Association for Computational Linguistics</em> (2014); as well as the paper that introduced the <code class="highlighter-rouge">word2vec</code> algorithm, Tomas Mikolov, et al., “Efficient Estimation of Word Representations in Vector Space,” (2013), <a href="http://arxiv.org/abs/1301.3781">http://arxiv.org/abs/1301.3781</a>.</p>
+   8. For arguments supporting count-based approaches to semantic modeling, see Omer Levy, et al.,  “Improved Distributional Similarity with Lessons Learned from Word Embeddings,” <em>Transactions of the Association for Computational Linguistics</em> 3 (2015): 211-225; Omer Levy and Yoav Goldberg, “Linguistic Regularities in Sparse and Explicit Word Representations,” <em>Proceedings of the Eighteenth Conference on Computational Language Learning</em> (2014): 171-180. For the rationale behind predictive modeling, see Marco Baroni, et al., “Don’t count, predict! A systematic comparison of context-counting vs. context-predicting semantic vectors,” <em>Proceedings of Association for Computational Linguistics</em> (2014); as well as the paper that introduced the <code class="language-plaintext highlighter-rouge">word2vec</code> algorithm, Tomas Mikolov, et al., “Efficient Estimation of Word Representations in Vector Space,” (2013), <a href="http://arxiv.org/abs/1301.3781">http://arxiv.org/abs/1301.3781</a>.</p>
 
 <p><a id="fn8"></a> 
-    9. There is still a lot work to do in using word distribution models to analyze phrases and sentences. <code class="highlighter-rouge">Word2vec</code> has been used to identify words that tend to appear in phrases. See Mikolov, et al., <a href="https://arxiv.org/abs/1310.4546">“Distributed Representations of Words and Phrases and their Compositionality,”</a> (Oct., 2013). Yet I have not seen persuasive results in using such models to analyze sentence similarity. My own attempts to use <code class="highlighter-rouge">word2vec</code> to analyze sentence similarity in the EEBO-TCP corpus has not worked at all. My standard deviation measure represents a somewhat crude but effective method for looking at the semantic similarities between words in context windows. I’m sure that there will be additional approaches that might be more useful in the future. Here’s just some information on results from using the measure in this experiment. The mean standard deviation value for each word in the subset 1678-1682 corpus (averaged across all of the context windows of each word) is <code class="highlighter-rouge">0.11229</code>. The mean for the top 150 terms that I present here is <code class="highlighter-rouge">0.139412</code>, which is a little more than five standard deviations above the mean. While these terms stand out from the rest, it is of course true that there is only a relative difference between the lexical variation appearing in the context windows of the top terms and those of the rest of the words in the model. Above I focus on the contexts of the top terms, but the terms with the lowest values for the measure also indicate its efficacy. For instance two of the bottom terms are <em>oge</em> and <em>ordeining</em>, which like many of the top terms are difficult to contextualize at first glance. In the subset, <em>Oge</em> primarily occurs in Irish genealogies in which formulaic phrases appear with great frequency, and the resulting context windows contain a lot of repeated words. Similarly, <em>ordeining</em> largely appears in formulaic phrases in religious texts, most notably <em>the power of ordeining others</em>. For a prime example, see Henry Dodwell, <a href="http://quod.lib.umich.edu/e/eebo/A36253.0001.001/1:29?amt2=120;amt3=40;c=eebo;c=eebo2;g=eebogroup;rgn=div1;view=toc;xc=1;q1=ordeining;op2=near;q2=others;op3=near;q3=power"><em>Separation of churches from episcopal government, as practised by the present non-conformists, proved schismatical from such principles as are least controverted and do withal most popularly explain the sinfulness and mischief of schism</em></a> (London: 1679). Finally, using my subsetting method produces the additional issue of reducing the size of the corpus under analysis and thus allowing texts with idiosyncratic linguistic structures to dominate. The subset corpus contains 4,370 texts. I think working with count-based distribution models might make this problem easier to avoid, although it may introduce other challenges regarding the size of the model.</p>
+    9. There is still a lot work to do in using word distribution models to analyze phrases and sentences. <code class="language-plaintext highlighter-rouge">Word2vec</code> has been used to identify words that tend to appear in phrases. See Mikolov, et al., <a href="https://arxiv.org/abs/1310.4546">“Distributed Representations of Words and Phrases and their Compositionality,”</a> (Oct., 2013). Yet I have not seen persuasive results in using such models to analyze sentence similarity. My own attempts to use <code class="language-plaintext highlighter-rouge">word2vec</code> to analyze sentence similarity in the EEBO-TCP corpus has not worked at all. My standard deviation measure represents a somewhat crude but effective method for looking at the semantic similarities between words in context windows. I’m sure that there will be additional approaches that might be more useful in the future. Here’s just some information on results from using the measure in this experiment. The mean standard deviation value for each word in the subset 1678-1682 corpus (averaged across all of the context windows of each word) is <code class="language-plaintext highlighter-rouge">0.11229</code>. The mean for the top 150 terms that I present here is <code class="language-plaintext highlighter-rouge">0.139412</code>, which is a little more than five standard deviations above the mean. While these terms stand out from the rest, it is of course true that there is only a relative difference between the lexical variation appearing in the context windows of the top terms and those of the rest of the words in the model. Above I focus on the contexts of the top terms, but the terms with the lowest values for the measure also indicate its efficacy. For instance two of the bottom terms are <em>oge</em> and <em>ordeining</em>, which like many of the top terms are difficult to contextualize at first glance. In the subset, <em>Oge</em> primarily occurs in Irish genealogies in which formulaic phrases appear with great frequency, and the resulting context windows contain a lot of repeated words. Similarly, <em>ordeining</em> largely appears in formulaic phrases in religious texts, most notably <em>the power of ordeining others</em>. For a prime example, see Henry Dodwell, <a href="http://quod.lib.umich.edu/e/eebo/A36253.0001.001/1:29?amt2=120;amt3=40;c=eebo;c=eebo2;g=eebogroup;rgn=div1;view=toc;xc=1;q1=ordeining;op2=near;q2=others;op3=near;q3=power"><em>Separation of churches from episcopal government, as practised by the present non-conformists, proved schismatical from such principles as are least controverted and do withal most popularly explain the sinfulness and mischief of schism</em></a> (London: 1679). Finally, using my subsetting method produces the additional issue of reducing the size of the corpus under analysis and thus allowing texts with idiosyncratic linguistic structures to dominate. The subset corpus contains 4,370 texts. I think working with count-based distribution models might make this problem easier to avoid, although it may introduce other challenges regarding the size of the model.</p>
 
 <p><a id="fn9"></a> 
     10. Roland Barthes, “The Reality Effect,” <em>The Rustle of Language</em> (Berkeley and Los Angeles: University of California, 1989), 141.</p>
@@ -510,7 +490,7 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 </ul>
 
 <h3 id="import-necessary-libraries-and-functions">Import necessary libraries and functions</h3>
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">os.path</span>
 <span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">listdir</span>
 <span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
@@ -518,26 +498,26 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
 <span class="kn">import</span> <span class="nn">math</span>
 <span class="kn">import</span> <span class="nn">community</span>
-<span class="c">##functions for reading file and filename </span>
-<span class="k">def</span> <span class="nf">remove_ext</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
-    <span class="c"># insert your code here</span>
-    <span class="nb">file</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<span class="c1">##functions for reading file and filename 
+</span><span class="k">def</span> <span class="nf">remove_ext</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># insert your code here
+</span>    <span class="nb">file</span><span class="p">,</span> <span class="n">ext</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">file</span> 
 <span class="k">def</span> <span class="nf">remove_dir</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="c"># insert your code here</span>
-    <span class="n">direct</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="c1"># insert your code here
+</span>    <span class="n">direct</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="n">basename</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">direct</span> 
 <span class="k">def</span> <span class="nf">get_filename</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
-    <span class="c"># insert your code here</span>
-    <span class="nb">file</span> <span class="o">=</span> <span class="n">remove_ext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="c1"># insert your code here
+</span>    <span class="nb">file</span> <span class="o">=</span> <span class="n">remove_ext</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
     <span class="nb">file</span> <span class="o">=</span> <span class="n">remove_dir</span><span class="p">(</span><span class="nb">file</span><span class="p">)</span>
     <span class="k">return</span> <span class="nb">file</span>
 <span class="k">def</span> <span class="nf">read_corpus_file</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>    
     <span class="s">"""Returns the full raw text of the corpus document, in a single string"""</span>
     <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s">"r"</span><span class="p">,</span> <span class="s">"utf-8"</span><span class="p">)</span> <span class="c">#open(filepath)</span>
-    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> 
-    <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">codecs</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span> <span class="s">"r"</span><span class="p">,</span> <span class="s">"utf-8"</span><span class="p">)</span> <span class="c1">#open(filepath)
+</span>    <span class="n">text</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">read</span><span class="p">()</span> 
+    <span class="n">f</span><span class="p">.</span><span class="n">close</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">text</span>
 <span class="k">def</span> <span class="nf">find_corpus_files</span><span class="p">(</span><span class="n">corpusdirectory</span><span class="p">):</span>
     <span class="s">"""Returns a list of all filenames of corpus files"""</span>
@@ -553,214 +533,198 @@ Above I observed the prevalence of terms from technical discourses, and here we 
 <span class="k">def</span> <span class="nf">idf</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">doc_list</span><span class="p">):</span>
     <span class="s">'''Takes a word and a lists of documents, and returns the inverse of the number of 
     documents that the word appears in.'''</span> 
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doc_list</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">texts_containing</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">doc_list</span><span class="p">)))</span>
-<span class="c">## importing file chunk </span>
-<span class="n">corpusdirectory</span> <span class="o">=</span> <span class="s">"liu_transcendental_data"</span>
-</code></pre>
-</div>
+    <span class="k">return</span> <span class="n">math</span><span class="p">.</span><span class="n">log</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doc_list</span><span class="p">)</span><span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">texts_containing</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">doc_list</span><span class="p">)))</span>
+<span class="c1">## importing file chunk 
+</span><span class="n">corpusdirectory</span> <span class="o">=</span> <span class="s">"liu_transcendental_data"</span>
+</code></pre></div></div>
 
 <h3 id="import-jstor-csvs">Import JSTOR CSVs</h3>
-<p>We are retrieving the the search results 15 bigram searches using the top 6 key terms for Liu’s 2004 <em>Critical Inquiry</em> article, “Transcendental Data: Toward a Cultureal History and Aesthetics of the New Encoded Discourse,” (Autumn, 2004). JSTOR’s top 6 key terms are: <code class="highlighter-rouge">database</code>, <code class="highlighter-rouge">discourse</code>, <code class="highlighter-rouge">content</code>, <code class="highlighter-rouge">management</code>, <code class="highlighter-rouge">document</code>, and <code class="highlighter-rouge">network</code>.</p>
+<p>We are retrieving the the search results 15 bigram searches using the top 6 key terms for Liu’s 2004 <em>Critical Inquiry</em> article, “Transcendental Data: Toward a Cultureal History and Aesthetics of the New Encoded Discourse,” (Autumn, 2004). JSTOR’s top 6 key terms are: <code class="language-plaintext highlighter-rouge">database</code>, <code class="language-plaintext highlighter-rouge">discourse</code>, <code class="language-plaintext highlighter-rouge">content</code>, <code class="language-plaintext highlighter-rouge">management</code>, <code class="language-plaintext highlighter-rouge">document</code>, and <code class="language-plaintext highlighter-rouge">network</code>.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_edgelist</span> <span class="o">=</span> <span class="p">[]</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_edgelist</span> <span class="o">=</span> <span class="p">[]</span> 
 <span class="n">journal_dict</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">find_corpus_files</span><span class="p">(</span><span class="n">corpusdirectory</span><span class="p">):</span> 
-    <span class="n">query</span> <span class="o">=</span> <span class="n">get_filename</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'_'</span><span class="p">)</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">get_filename</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">split</span><span class="p">(</span><span class="s">'_'</span><span class="p">)</span>
     <span class="n">text</span> <span class="o">=</span> <span class="n">read_corpus_file</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">"</span><span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="p">.</span><span class="n">strip</span><span class="p">():</span>
             <span class="k">continue</span>
         <span class="k">if</span> <span class="s">"Journal,ARTICLE_COUNT"</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
             <span class="k">continue</span> 
         <span class="k">else</span><span class="p">:</span> 
-            <span class="n">x</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span>
-            <span class="n">journal</span><span class="p">,</span><span class="n">number</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">","</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c">#[1]#, 1)</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span> 
-                <span class="n">journal_dict</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">journal</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
-</code></pre>
-</div>
+            <span class="n">x</span> <span class="o">=</span> <span class="n">line</span><span class="p">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">).</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf8'</span><span class="p">)</span>
+            <span class="n">journal</span><span class="p">,</span><span class="n">number</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="n">split</span><span class="p">(</span><span class="s">","</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">#[1]#, 1)
+</span>            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">query</span><span class="p">:</span> 
+                <span class="n">journal_dict</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">append</span><span class="p">((</span><span class="n">journal</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h4 id="check-that-we-have-the-journals-for-each-search-term">Check that we have the journals for each search term.</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_dict</span><span class="p">.</span><span class="n">keys</span><span class="p">()</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>dict_keys(['management', 'database', 'discourse', 'network', 'content', 'document'])
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dict_keys(['management', 'database', 'discourse', 'network', 'content', 'document'])
+</code></pre></div></div>
 
 <h3 id="weight-the-search-results-using-the-term-frequency-inverse-document-frequency-measure">Weight the search results using the Term Frequency-Inverse Document Frequency Measure</h3>
 <p>This measure is a popular and conventional measure from Information Retrieval (the field responsible for many search algorithms) used to score terms in a document based on their relative frequency in that document and their inverse frequency in the larger corpus. It thus give higher scores to terms (or here journals) that often appear in one document (or search) and not in others, so as to reduce the noise from terms/journals that are frequent across all documents/searches.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journals</span> <span class="o">=</span> <span class="p">[]</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journals</span> <span class="o">=</span> <span class="p">[]</span> 
 <span class="n">journal_corpus</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> 
+<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span> 
     <span class="n">query_list</span> <span class="o">=</span> <span class="p">[]</span> 
     <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span> 
-        <span class="n">query_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">journal</span><span class="p">)</span>
-        <span class="n">journals</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">journal</span><span class="p">)</span>
-    <span class="n">journal_corpus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query_list</span><span class="p">)</span>
+        <span class="n">query_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">journal</span><span class="p">)</span>
+        <span class="n">journals</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">journal</span><span class="p">)</span>
+    <span class="n">journal_corpus</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">query_list</span><span class="p">)</span>
 <span class="n">journals</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">journals</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_idf</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_idf</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">journal</span> <span class="ow">in</span> <span class="n">journals</span><span class="p">:</span> 
     <span class="n">journal_idf</span><span class="p">[</span><span class="n">journal</span><span class="p">]</span> <span class="o">=</span> <span class="n">idf</span><span class="p">(</span><span class="n">journal</span><span class="p">,</span> <span class="n">journal_corpus</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span> 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h4 id="check-the-inverse-document-frequency-of-one-journal">Check the Inverse Document Frequency of one Journal</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_idf</span><span class="p">[</span><span class="s">'The American Historical Review'</span><span class="p">]</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_idf</span><span class="p">[</span><span class="s">'The American Historical Review'</span><span class="p">]</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>0.8458493201727416
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.8458493201727416
+</code></pre></div></div>
 
 <h4 id="first-we-we-will-get-the-tf-idf-score-for-each-journal">First we we will get the TF-IDF score for each journal</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_network2</span> <span class="o">=</span> <span class="p">[]</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_network2</span> <span class="o">=</span> <span class="p">[]</span> 
 <span class="n">query_list</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">total_value</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="c">#for key, value in query.items():</span>
-    <span class="n">query_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="c1">#for key, value in query.items():
+</span>    <span class="n">query_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">total_value</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">tf_idf_score</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">/</span><span class="n">total_value</span><span class="p">)</span> <span class="o">*</span><span class="n">journal_idf</span><span class="p">[</span><span class="n">journal</span><span class="p">]</span>
-        <span class="n">journal_network2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">query</span><span class="p">,</span> <span class="n">journal</span><span class="p">,</span> <span class="n">tf_idf_score</span><span class="p">))</span>
-</code></pre>
-</div>
+        <span class="n">journal_network2</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">query</span><span class="p">,</span> <span class="n">journal</span><span class="p">,</span> <span class="n">tf_idf_score</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h4 id="now-we-will-get-the-average-score--re-produce-the-network-with-a-filter-to-take-only-journals-that-have-scores-25-times-greater-than-the-average-score">Now we will get the average score &amp; re-produce the network with a filter to take only journals that have scores 2.5 times greater than the average score</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">total_score</span> <span class="o">=</span> <span class="mi">0</span> 
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">journal_network2</span><span class="p">:</span>
     <span class="n">total_score</span> <span class="o">+=</span> <span class="n">item</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">avg</span> <span class="o">=</span> <span class="n">total_score</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">journal_network2</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">journal_network2</span> <span class="o">=</span> <span class="p">[]</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">journal_network2</span> <span class="o">=</span> <span class="p">[]</span> 
 <span class="n">query_list</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">query</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">journal_dict</span><span class="p">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">total_value</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="c">#for key, value in query.items():</span>
-    <span class="n">query_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+    <span class="c1">#for key, value in query.items():
+</span>    <span class="n">query_list</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">total_value</span> <span class="o">+=</span> <span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">value</span><span class="p">:</span>
         <span class="n">tf_idf_score</span> <span class="o">=</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="o">/</span><span class="n">total_value</span><span class="p">)</span> <span class="o">*</span><span class="n">journal_idf</span><span class="p">[</span><span class="n">journal</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">tf_idf_score</span> <span class="o">&gt;</span> <span class="n">avg</span><span class="o">*</span><span class="mf">2.5</span><span class="p">:</span> 
-            <span class="n">journal_network2</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">query</span><span class="p">,</span> <span class="n">journal</span><span class="p">,</span> <span class="n">tf_idf_score</span><span class="p">))</span>
-</code></pre>
-</div>
+            <span class="n">journal_network2</span><span class="p">.</span><span class="n">append</span><span class="p">((</span><span class="n">query</span><span class="p">,</span> <span class="n">journal</span><span class="p">,</span> <span class="n">tf_idf_score</span><span class="p">))</span>
+</code></pre></div></div>
 
 <h3 id="create-network-graph">Create network graph</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="n">nx</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
 
-<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+<span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">Graph</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">journal_network2</span><span class="p">:</span>
     <span class="n">wt</span> <span class="o">=</span> <span class="n">i</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">20</span>
-    <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">wt</span><span class="p">)</span>
-<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
-</code></pre>
-</div>
+    <span class="n">G</span><span class="p">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">weight</span><span class="o">=</span><span class="n">wt</span><span class="p">)</span>
+<span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="p">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h3 id="alter-size-of-network-nodes-according-to-number-of-edges">Alter size of network nodes according to number of edges</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">degrees</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">():</span> 
+<span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">():</span> 
     <span class="n">node_degree</span> <span class="o">=</span> <span class="mi">0</span> 
-    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span> 
+    <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">edges</span><span class="p">():</span> 
         <span class="k">if</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
             <span class="n">node_degree</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="n">node_degree</span> <span class="o">=</span> <span class="n">node_degree</span><span class="o">*</span><span class="mi">50</span>
-    <span class="n">degrees</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_degree</span><span class="p">)</span>
-    <span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
-</code></pre>
-</div>
+    <span class="n">degrees</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">node_degree</span><span class="p">)</span>
+    <span class="n">nodes</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+</code></pre></div></div>
 
 <h4 id="modify-edge-colors-in-network">Modify edge colors in network</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">colors</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">query_edges</span> <span class="o">=</span> <span class="p">[]</span> 
-<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">():</span> 
+<span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">edges</span><span class="p">():</span> 
     <span class="k">if</span> <span class="s">'content'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'r'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'r'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
     <span class="k">elif</span> <span class="s">'discourse'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'b'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
     <span class="k">elif</span> <span class="s">'database'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'g'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'g'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
     <span class="k">elif</span> <span class="s">'management'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'m'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'m'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
     <span class="k">elif</span> <span class="s">'document'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
     <span class="k">elif</span> <span class="s">'network'</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">:</span> 
-        <span class="n">colors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
-        <span class="n">query_edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+        <span class="n">colors</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'c'</span><span class="p">)</span>
+        <span class="n">query_edges</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
 <span class="n">color_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">'r'</span><span class="p">,</span> <span class="s">'b'</span><span class="p">,</span> <span class="s">'g'</span><span class="p">,</span> <span class="s">'m'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">,</span> <span class="s">'c'</span><span class="p">]</span>
 <span class="n">edge_labels</span> <span class="o">=</span> <span class="p">[</span><span class="s">'content'</span><span class="p">,</span> <span class="s">'discourse'</span><span class="p">,</span> <span class="s">'database'</span><span class="p">,</span> <span class="s">'management'</span><span class="p">,</span> <span class="s">'document'</span><span class="p">,</span> <span class="s">'network'</span><span class="p">]</span>   
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h2 id="plot--save-the-graph-as-png-file">Plot &amp; Save the graph as png file</h2>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">([</span><span class="n">label</span> <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pos</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">query_list</span><span class="p">])</span> <span class="c"># if "topic " in topic])</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>  <span class="n">font_color</span><span class="o">=</span><span class="s">'black'</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="p">)</span>
-<span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">subgraph</span><span class="p">([</span><span class="n">journal</span> <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pos</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">journal</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">query_list</span> <span class="ow">and</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">avg</span><span class="o">*</span><span class="mi">2</span> <span class="ow">or</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">28</span><span class="p">,</span><span class="mi">28</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">subgraph</span><span class="p">([</span><span class="n">label</span> <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">label</span> <span class="ow">in</span> <span class="n">query_list</span><span class="p">])</span> <span class="c1"># if "topic " in topic])
+</span><span class="n">nx</span><span class="p">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span>  <span class="n">font_color</span><span class="o">=</span><span class="s">'black'</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="p">)</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">subgraph</span><span class="p">([</span><span class="n">journal</span> <span class="k">for</span> <span class="n">journal</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">pos</span><span class="p">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">journal</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">query_list</span> <span class="ow">and</span> <span class="n">value</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">avg</span><span class="o">*</span><span class="mi">2</span> <span class="ow">or</span> 
                <span class="n">value</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&gt;</span><span class="n">avg</span><span class="o">*</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">label_pos</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">nx</span><span class="p">.</span><span class="n">draw_networkx_labels</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">label_pos</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
 
-<span class="c">## Algorithm for automatically detecting communities in the network</span>
-<span class="n">part</span> <span class="o">=</span> <span class="n">community</span><span class="o">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
-<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">part</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="o">.</span><span class="n">nodes</span><span class="p">()]</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_list</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">'jet'</span><span class="p">),</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">degrees</span><span class="p">,</span> 
+<span class="c1">## Algorithm for automatically detecting communities in the network
+</span><span class="n">part</span> <span class="o">=</span> <span class="n">community</span><span class="p">.</span><span class="n">best_partition</span><span class="p">(</span><span class="n">G</span><span class="p">)</span>
+<span class="n">values</span> <span class="o">=</span> <span class="p">[</span><span class="n">part</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">G</span><span class="p">.</span><span class="n">nodes</span><span class="p">()]</span>
+<span class="n">nx</span><span class="p">.</span><span class="n">draw_networkx_nodes</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">node_list</span><span class="o">=</span><span class="n">nodes</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s">'jet'</span><span class="p">),</span> <span class="n">node_color</span> <span class="o">=</span> <span class="n">values</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="n">degrees</span><span class="p">,</span> 
                        <span class="n">with_labels</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 
-<span class="n">edges</span> <span class="o">=</span> <span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">()</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">G</span><span class="p">.</span><span class="n">edges</span><span class="p">()</span>
 <span class="n">weights</span> <span class="o">=</span> <span class="p">[</span><span class="n">G</span><span class="p">[</span><span class="n">u</span><span class="p">][</span><span class="n">v</span><span class="p">][</span><span class="s">'weight'</span><span class="p">]</span> <span class="k">for</span> <span class="n">u</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">]</span>
    
-    <span class="c"># plot edges</span>
-<span class="n">nx</span><span class="o">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">G</span><span class="o">.</span><span class="n">edges</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
+    <span class="c1"># plot edges
+</span><span class="n">nx</span><span class="p">.</span><span class="n">draw_networkx_edges</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">edgelist</span><span class="o">=</span><span class="n">G</span><span class="p">.</span><span class="n">edges</span><span class="p">(),</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">edge_color</span><span class="o">=</span><span class="n">colors</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="n">weights</span><span class="p">)</span>
 
-<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">plt</span><span class="p">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">f</span><span class="p">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="n">edge</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">color_labels</span><span class="p">,</span> <span class="n">edge_labels</span><span class="p">):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
+    <span class="n">ax</span><span class="p">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">],</span><span class="n">color</span><span class="o">=</span><span class="n">color</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">edge</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Co-occuring Journal Titles in Search Results for Top 6 Key Terms in Liu's 'Transcendental Data'"</span><span class="p">,</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">axis</span><span class="p">(</span><span class="s">'off'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">title</span><span class="p">(</span><span class="s">"Co-occuring Journal Titles in Search Results for Top 6 Key Terms in Liu's 'Transcendental Data'"</span><span class="p">,</span>
           <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'search_network.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">'landscape'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s">'tight'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'search_network.png'</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s">'landscape'</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s">'tight'</span><span class="p">)</span>
+<span class="n">plt</span><span class="p">.</span><span class="n">show</span><span class="p">()</span>
 
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>/Users/collin/anaconda/lib/python3.4/site-packages/matplotlib/collections.py:650: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/collin/anaconda/lib/python3.4/site-packages/matplotlib/collections.py:650: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
   if self._edgecolors_original != str('face'):
 /Users/collin/anaconda/lib/python3.4/site-packages/matplotlib/collections.py:590: FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
   if self._edgecolors == str('face'):
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p><img src="/assets/output_26_1.png" alt="terms" /></p>
 

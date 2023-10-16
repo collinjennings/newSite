@@ -17,7 +17,7 @@
     <link rel="alternate" type="application/rss+xml" title="RSS Feed for Collin Jennings" href="/feed.xml" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/pixyll.css?201611041249" type="text/css">
+    <link rel="stylesheet" href="/css/pixyll.css?202310161042" type="text/css">
 
     <!-- Fonts -->
     
@@ -115,6 +115,12 @@
 
     
 
+    
+
+    
+
+    
+
 
     
 
@@ -132,6 +138,12 @@
 
     
         <a href="/contact/">Contact</a>
+    
+
+    
+
+    
+
     
 
     
@@ -180,7 +192,7 @@
 <article class="post-content">
   <p>This is the notebook that Sven Anderson and I used for our “Family Weekend” class over the weekend. We began the class with two poems from an NPR article called, “<a href="http://www.npr.org/sections/alltechconsidered/2016/06/27/480639265/human-or-machine-can-you-tell-who-wrote-these-poems">Human or Machine: Can you tell who wrote these poems?</a>”</p>
 
-<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (<code class="highlighter-rouge">functions.py</code>) to make it easier to read. You can access those functions and the accompanying text files <a href="https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0">here</a>.)</p>
+<p>The question of what constitutes poetic style has and will continue to produce varied and complicated answers, but, at bottom, it comes down to choice. This experiment in generating “poetry” represents one way of simulating this process of choice by randomly picking words according to their frequency in a particular poet’s corpus. (Just to note, some of the functions in this script are in a separate file (<code class="language-plaintext highlighter-rouge">functions.py</code>) to make it easier to read. You can access those functions and the accompanying text files <a href="https://www.dropbox.com/sh/zme9hxf35ewdtvm/AADiV4PHy7i0xtF8uOBl__Xfa?dl=0">here</a>.)</p>
 
 <h3 id="objective-we-will-be-able-to-articulate-specific-features-of-poetic-writing-that-can-distinguish-computer-generated-poems-from-ones-written-by-people">Objective: We will be able to articulate specific features of poetic writing that can distinguish computer-generated poems from ones written by people.</h3>
 
@@ -196,71 +208,62 @@
 
 <p>In programming, we produce simulations using <strong>algorithms</strong>, which are sets of rules for the computer to follow. They are basically computational recipes for turning a given input into an output. Here we create an algorithm in a <strong>function</strong> for calculating the tip for a meal.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tipCalculator</span> <span class="p">(</span><span class="n">mealTotal</span><span class="p">):</span> <span class="c">### Our "mealTotal" is our input. </span>
-    <span class="k">return</span> <span class="n">mealTotal</span> <span class="o">*</span> <span class="mf">0.20</span> <span class="o">+</span> <span class="n">mealTotal</span> <span class="c">### We add 20% of the total to the input to get our output</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">tipCalculator</span> <span class="p">(</span><span class="n">mealTotal</span><span class="p">):</span> <span class="c1">### Our "mealTotal" is our input. 
+</span>    <span class="k">return</span> <span class="n">mealTotal</span> <span class="o">*</span> <span class="mf">0.20</span> <span class="o">+</span> <span class="n">mealTotal</span> <span class="c1">### We add 20% of the total to the input to get our output
+</span>
+<span class="c1">## We've created the function, now we can run it: 
+</span><span class="k">print</span><span class="p">(</span><span class="n">tipCalculator</span><span class="p">(</span><span class="mf">50.00</span><span class="p">))</span>
+</code></pre></div></div>
 
-<span class="c">## We've created the function, now we can run it: </span>
-<span class="k">print</span><span class="p">(</span><span class="n">tipCalculator</span><span class="p">(</span><span class="mf">50.00</span><span class="p">))</span>
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>60.0
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>60.0
+</code></pre></div></div>
 
 <h4 id="now-lets-think-about-how-we-might-simulate-poetic-word-choice-to-produce-randomly-generated-poetry">Now let’s think about how we might simulate poetic word choice to produce randomly generated poetry.</h4>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># Load some functionality and some pre-computed probabilities.</span>
-<span class="kn">import</span> <span class="nn">functions</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Load some functionality and some pre-computed probabilities.
+</span><span class="kn">import</span> <span class="nn">functions</span> 
 <span class="kn">import</span> <span class="nn">pickle</span> 
-<span class="n">dickinsonProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-</code></pre>
-</div>
+<span class="n">dickinsonProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'the'</span><span class="p">])</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'the'</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">[</span><span class="s">'heart'</span><span class="p">])</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>0.06506088945704097
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0.06506088945704097
 0.0009419363520150709
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>These numbers tell us the likelihood of picking each word if we were to draw them at random from the text: the more frequent the word in the text, the greater chance of choosing it.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span> 
 <span class="k">def</span> <span class="nf">randomWord</span><span class="p">(</span><span class="n">probs</span><span class="p">):</span>
     <span class="s">'''Given probs, a dictionary of word probabilities, this
     returns a word according to how frequently that word is found
     in the dictionary.'''</span>
     <span class="n">rnum</span> <span class="o">=</span> <span class="n">random</span><span class="p">()</span>
     <span class="n">sumprob</span> <span class="o">=</span> <span class="mf">0.0</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">probs</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">probs</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">sumprob</span> <span class="o">+=</span> <span class="n">probs</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
         <span class="k">if</span> <span class="n">sumprob</span> <span class="o">&gt;</span> <span class="n">rnum</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">k</span>
     <span class="k">return</span> <span class="n">k</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>We can simulate this process by using a function that randomly chooses words from Dickinson’s poetry, based on her word usage.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>drum
-</code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drum
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># what happens if 10 is replaced by 20?</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># what happens if 10 is replaced by 20?
+</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span> 
     <span class="k">print</span><span class="p">(</span><span class="n">randomWord</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">))</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>since
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>since
 but
 them
 most
@@ -270,62 +273,57 @@ one
 repeal
 the
 delight
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>This frequency-based approach gives us a way to simulate the poet’s process of choosing words. But after we choose a random word what comes next?</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">dickinsonBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-<span class="n">shakespeareProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-<span class="n">shakespeareBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dickinsonBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'dickinsonBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+<span class="n">shakespeareProbs</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeProbs.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+<span class="n">shakespeareBigrams</span> <span class="o">=</span> <span class="n">pickle</span><span class="p">.</span><span class="n">load</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">'shakeBigrams.p'</span><span class="p">,</span> <span class="s">'rb'</span><span class="p">))</span>
+</code></pre></div></div>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">shakespeareBigrams</span><span class="p">[</span><span class="s">'compare'</span><span class="p">])</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">shakespeareBigrams</span><span class="p">[</span><span class="s">'compare'</span><span class="p">])</span>
+</code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="err">'thou':</span><span class="w"> </span><span class="err">0.3333333333333333,</span><span class="w"> </span><span class="err">'with':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'myself':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'thee':</span><span class="w"> </span><span class="err">0.16666666666666666,</span><span class="w"> </span><span class="err">'them':</span><span class="w"> </span><span class="err">0.16666666666666666</span><span class="p">}</span><span class="w">
-</span></code></pre>
-</div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'thou': 0.3333333333333333, 'with': 0.16666666666666666, 'myself': 0.16666666666666666, 'thee': 0.16666666666666666, 'them': 0.16666666666666666}
+</code></pre></div></div>
 
 <p>We can choose the next word based on which words are likely to follow the first word, according to the poet’s usage. In Shakespeare’s Sonnets, <em>thou</em> is the most likely word to follow <em>compare</em>.</p>
 
 <p>With this process of randomly choosing words likely to follow one another we can build entire poems. In the following algorithm, we combine this process with a method of making the poems rhyme by matching the last word of every odd line with a random rhyming word in every even line.</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generatePoem</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">,</span> <span class="n">poemLength</span><span class="p">):</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">generatePoem</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">,</span> <span class="n">poemLength</span><span class="p">):</span>
     <span class="n">poemLines</span> <span class="o">=</span> <span class="p">[]</span> 
-    <span class="c"># create poemLines from probabilities</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">poemLength</span><span class="p">):</span>
-        <span class="n">line</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">generateFromBigrams</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">)</span>
-        <span class="n">poemLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="c1"># create poemLines from probabilities
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">poemLength</span><span class="p">):</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">functions</span><span class="p">.</span><span class="n">generateFromBigrams</span><span class="p">(</span><span class="n">probs</span><span class="p">,</span> <span class="n">bigrams</span><span class="p">,</span> <span class="n">lineLength</span><span class="p">)</span>
+        <span class="n">poemLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
     <span class="n">lineCount</span> <span class="o">=</span> <span class="mi">1</span> 
     <span class="n">newLines</span> <span class="o">=</span> <span class="p">[]</span> 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">poemLines</span><span class="p">:</span> 
-        <span class="k">if</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c"># an odd line sets the rhyme</span>
-            <span class="n">rhymedLine</span> <span class="o">=</span> <span class="n">line</span> 
-            <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># an odd line sets the rhyme
+</span>            <span class="n">rhymedLine</span> <span class="o">=</span> <span class="n">line</span> 
+            <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">)</span>
             <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span> 
-        <span class="k">elif</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c"># an even line must match rhyme of </span>
-            <span class="n">rhymingLine</span> <span class="o">=</span> <span class="n">line</span>  <span class="c"># preceding line</span>
-            <span class="k">try</span><span class="p">:</span> 
-                <span class="k">if</span> <span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">functions</span><span class="o">.</span><span class="n">pronounce</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span> 
-                    <span class="n">newWord</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">rhyme</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-                    <span class="n">rhymingLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newWord</span> <span class="c"># fix the rhyme to match</span>
-                    <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">lineCount</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># an even line must match rhyme of 
+</span>            <span class="n">rhymingLine</span> <span class="o">=</span> <span class="n">line</span>  <span class="c1"># preceding line
+</span>            <span class="k">try</span><span class="p">:</span> 
+                <span class="k">if</span> <span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">in</span> <span class="n">functions</span><span class="p">.</span><span class="n">pronounce</span><span class="p">.</span><span class="n">keys</span><span class="p">():</span> 
+                    <span class="n">newWord</span> <span class="o">=</span> <span class="n">functions</span><span class="p">.</span><span class="n">rhyme</span><span class="p">(</span><span class="n">rhymedLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">rhymingLine</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">newWord</span> <span class="c1"># fix the rhyme to match
+</span>                    <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
                     <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span>
             <span class="k">except</span><span class="p">:</span> 
-                <span class="n">newLines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
+                <span class="n">newLines</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">rhymingLine</span><span class="p">)</span>
                 <span class="n">lineCount</span> <span class="o">+=</span> <span class="mi">1</span> 
-    <span class="c"># Now we concatenate to a single string.</span>
-    <span class="n">fullPoem</span> <span class="o">=</span> <span class="p">[]</span> 
+    <span class="c1"># Now we concatenate to a single string.
+</span>    <span class="n">fullPoem</span> <span class="o">=</span> <span class="p">[]</span> 
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">newLines</span><span class="p">:</span>
-        <span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
-        <span class="n">fullLine</span> <span class="o">=</span> <span class="s">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
-        <span class="n">fullPoem</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fullLine</span><span class="p">)</span>
-    <span class="k">return</span> <span class="s">''</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fullPoem</span><span class="p">)</span>
-</code></pre>
-</div>
+        <span class="n">line</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">)</span>
+        <span class="n">fullLine</span> <span class="o">=</span> <span class="s">' '</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">word</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">)</span>
+        <span class="n">fullPoem</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">fullLine</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">fullPoem</span><span class="p">)</span>
+</code></pre></div></div>
 
 <p>Now we can generate our own “poems” from the word choice of either Shakespeare or Emily Dickinson.</p>
 
@@ -335,10 +333,9 @@ delight
 
 <p>(I really like the concluding couplet of the Shakespearean poem.)</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">shakespeareProbs</span><span class="p">,</span> <span class="n">shakespeareBigrams</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span> <span class="p">))</span>
-</code></pre>
-</div>
-<div class="highlighter-rouge"><pre class="highlight"><code>praises worse than at that i not so affined 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">shakespeareProbs</span><span class="p">,</span> <span class="n">shakespeareBigrams</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span> <span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>praises worse than at that i not so affined 
 that our time and eyes have might to give 
 in my bosoms ward but let me do forgive 
 yore those children nursed deliverd from serving with thee 
@@ -351,23 +348,20 @@ doubting the face should transport me that is kind
 enforced to my deepest sense to his brief affined 
 and gives thee back the past i have often 
 not my love thy store when days when acetaminophen 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <h3 id="generate-dickinsonian-poery">Generate Dickinsonian Poery</h3>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">,</span> <span class="n">dickinsonBigrams</span><span class="p">,</span> <span class="c">##, ##))</span>
-</code></pre>
-</div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">generatePoem</span><span class="p">(</span><span class="n">dickinsonProbs</span><span class="p">,</span> <span class="n">dickinsonBigrams</span><span class="p">,</span> <span class="c1">##, ##))
+</span></code></pre></div></div>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>for heaven she had come nor simplified her 
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>for heaven she had come nor simplified her 
 consummate plush how cold i had the her 
 off for pearl then of love is finished 
 you lost was there came out time abolished 
 held but internal evidence gives us is overcome 
 he stayed away upon the merchant smiled branscome 
-</code></pre>
-</div>
+</code></pre></div></div>
 
 </article>
 
